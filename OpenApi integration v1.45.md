@@ -100,7 +100,7 @@ The Auto-subscribe functionality triggers in two scenarios:
  2. **User comes into a Geo-fence range:** OpenAPI will subscribe the user to the community.
 #### Language translation
 This feature translates the alert message to any available language.
-Note: List of languages will be coming from the In-Telligent (Refer section 5.5).
+Note: List of languages will be coming from the In-Telligent.
 
 ## Integration Steps
 The following describes the required Android and iOS integration dependencies for the OpenAPI library.
@@ -618,7 +618,7 @@ To implement this functionality, the following steps must be taken.
    });
    ```   
 3. Building Notifications: After authentication and getting buildings the following method is used to get notifications for all buildings according to building ID.
-Note : Notification doesn’t contain attachment information (refer 5.5).
+Note : Notification doesn’t contain attachment information.
    ```java
    OpenAPI.getBuildingNotifications(new Consumer<NotificationsMap>() { 
     @Override
@@ -631,7 +631,7 @@ Note : Notification doesn’t contain attachment information (refer 5.5).
     });
    ```
 4. Notifications for a building: After authentication and getting buildings the following method is used to get notifications for a single building according to building ID.
-   Note : Notification doesn’t contain attachment information (refer 5.5).
+   Note : Notification doesn’t contain attachment information.
    ```java
    OpenAPI.getNotificationsByBuilding(int buildingId,new Consumer< NotificationsList>() {
    @Override
@@ -713,7 +713,7 @@ To implement this functionality, the following steps must be taken.
             }
             }
             ```
-   2. Building Notifications: After authentication and getting buildings (refer to section 5.4 point 2) the following method is used to get notifications for buildings using “building id”. 
+   2. Building Notifications: After authentication and getting buildings the following method is used to get notifications for buildings using “building id”. 
       OpenAPI.getBuildingNotifications()
    3. Notifications for building: After authentication and getting buildings the following method is used to get notifications for a single building according to building ID. 
       OpenAPI.getNotificationsByBuilding(communityId)
@@ -787,7 +787,6 @@ Admin can add a Community Manager in In-Telligent Web Portal. To register as a M
       }
       ```
    2. Send Alert: After authentication with community manager credentials, you will be able to access the below API call with the necessary information.
-      To get buildings list (refer to section 5.4 point 2).
       OpenAPI.sendAlert(title: alertTitle, message: alertMessage, building: buildingInformation, attachments: attachmentsInformation, notificationType: NotificationType)
       **Parameters:**
       **title –**
@@ -864,7 +863,7 @@ To implement this functionality, the following steps must be taken.
       Type - String
       **buildingID –**
       Required - Yes
-      Type – String(To get building Id -refer to section 5.3 point 4).
+      Type – String
       **attachments –**
       Required – optional
       Type – Array of CustomImage Paths
@@ -1023,7 +1022,6 @@ To implement this functionality, the following steps must be taken
       }
       ```   
    3. Opened Alert: After authentication with community manager credentials, you will be able to access the below API call with the necessary information.
-      To get buildings list (refer to section 5.4 point 2).
       OpenAPI.openedAlert(notificationId: notification_id)
       **Parameters:**
       **notificationId –**
@@ -1086,7 +1084,6 @@ To implement this functionality, the following steps must be taken
             }
             ``` 
    3. Delete Alert: After authentication with community manager credentials, you will be able to access the below API call with the necessary information.
-      To get buildings list (refer to section 5.4 point 2).
       OpenAPI.deleteAlert(notificationId: notification_id)
       **Parameters:**
       **notificationId –**
