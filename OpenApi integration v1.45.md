@@ -211,14 +211,14 @@ https://firebase.google.com/docs/cloud-messaging/android/client
       Type - String
       ```java 
       OpenAPI.getInstance().authorization(pushToken, new Consumer<SuccessResponse>() {
-      @Override
-      public void accept(SuccessResponse status) {
-      if (status.isSuccess()) {
-      PrintLog.print(TAG, "Sign in received success");
-      } else {
-      PrintLog.print(TAG, "Sign in received failure");
-      }
-      }
+       @Override
+       public void accept(SuccessResponse status) {
+        if (status.isSuccess()) {
+         PrintLog.print(TAG, "Sign in received success");
+        } else {
+         PrintLog.print(TAG, "Sign in received failure");
+        }
+       }
       });
       ```
 7. The following steps need to be added to the Application class and performed one time on initial launch of the mobile application:
@@ -331,6 +331,7 @@ https://firebase.google.com/docs/cloud-messaging/android/client
    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
    ```
 10. Add the following service to the Manifest file within <application> tag
+    FCMService is a the class which extends FirebaseMessagingService. The onMessageReceived method is called when a pushed notification is received.
     ```java
     <service android:name=".FCMService">
     <intent-filter>
@@ -616,34 +617,8 @@ To implement this functionality, the following steps must be taken.
      }
     }
    });
-   ```   
-3. Building Notifications: After authentication and getting buildings the following method is used to get notifications for all buildings according to building ID.
-Note : Notification doesn’t contain attachment information.
-   ```java
-   OpenAPI.getBuildingNotifications(new Consumer<NotificationsMap>() { 
-    @Override
-    public void accept(NotificationsMap notificationsByBuilding) throws Exception {
-        //Printing the Notifications with building ID
-        notificationsByBuildings.getNotications.keySet().forEach(entry->{
-        System.out.println(entry.getKey() + " " + entry.getValue());
-        });
-     }
-    });
    ```
-4. Notifications for a building: After authentication and getting buildings the following method is used to get notifications for a single building according to building ID.
-   Note : Notification doesn’t contain attachment information.
-   ```java
-   OpenAPI.getNotificationsByBuilding(int buildingId,new Consumer< NotificationsList>() {
-   @Override
-   public void accept(NotificationsList notificationsByBuilding) throws Exception {
-   //Printing the Notifications
-   for(Notification notification : notificationsByBuilding.getNotifications){            
-   System.out.println(notification);
-   };
-   }
-   });
-   ```
-5. Notification: After authentication and getting buildings the following method is used to get complete notification data according to notification ID.
+  3. Notification: After authentication and getting buildings the following method is used to get complete notification data according to notification ID.
    ```java
    OpenAPI.getCompleteNotification(int notificationId,new Consumer< Notification>() {
    @Override
@@ -653,7 +628,7 @@ Note : Notification doesn’t contain attachment information.
    }
    });
    ```
-6. List of Languages: After getting building notifications, the following method is used to get a list of languages supported for Notification translation.
+4. List of Languages: After getting building notifications, the following method is used to get a list of languages supported for Notification translation.
    ```java
    OpenAPI.getLanguages()
    OpenAPI.getLanguages(new Consumer<NotificationLanguageResponse>() {
@@ -663,7 +638,7 @@ Note : Notification doesn’t contain attachment information.
    }
    });
    ```
-7. Notification Translation: The method OpenAPI.getTranslation() is used to retrieve the translated message and the title of the message.
+5. Notification Translation: The method OpenAPI.getTranslation() is used to retrieve the translated message and the title of the message.
    Parameters: notification ID and target language.
    ```java
    OpenAPI.getTranslation(id,languageValue,new Consumer<TranslationResponse>() {
