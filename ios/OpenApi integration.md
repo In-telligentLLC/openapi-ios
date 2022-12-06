@@ -72,13 +72,13 @@ The alert notification can be translated into a different language for better re
 * Supplied by In-Telligent
 
 ## Setup Environment
-The following describes the required Android and iOS integration dependencies for the OpenAPI library.
+The following describes the iOS integration dependencies for the OpenAPI library.
 
 ### iOS - Manually <a id='setup-ios-Manually'></a>
 1. Open the XCode project in which you would like to integrate this framework.
 2. Drag and drop “OpenAPI.framework” into the bundle folder.
 3. Make sure this framework is added in both “Embedded Binaries” and “Linked Framework and libraries”
-4. Import the following third-party dependency libraries:
+4. Add the following third-party dependency libraries along with the OpenAPI with the versions:
    ```swift
    pod 'Alamofire', '~> 4.9.1’
    pod "RealmSwift", "3.17.3"
@@ -124,37 +124,17 @@ The following describes the required Android and iOS integration dependencies fo
    There are 2 methods for the authentication process:
    1. CheckToken: – This is a method which looks for the authentication token in the application cache. (This will be by default false in the first run).
    2. authorization: - If the authentication token is not available, checkToken method returns false. Then a call to “authorization” method is required to get the authentication token and store it in cache.
-   **Parameters:**
-   **partnerToken –**
-   Required - Yes
-   Type - String
-   **email/mobileNumber –**
-   Required - Yes
-   Type - String
-   **password –**
-   Required - Yes
-   Type - String
-   **name –**
-   Required – Yes (Name or empty string)
-   Type – String
-   Default – If empty, default is email/mobilenumber
-   **gender –**
-   Required – Yes
-   Type – OpenAPIUserGender (OpenAPI library class)
-      ```swifty
-      OpenAPI.authorization(
-      partnerToken: partnerToken,
-      email: emailId,
-      mobileNumber: mobileNumber,
-      password: password,
-      name: username,
-      gender: .male){ status in
-       if status {
-        // login success
-       } else {
-        // something went wrong
-       }
-      }
+      ```swift
+        OpenAPI.authorization() {error, isTokenUpdated  in
+            if isTokenUpdated {
+                KeyChainStorage.shared.token = OpenAPI.token
+                OpenAPI.start(self)
+                completion?(OpenAPI.token, nil)
+                //still not required to pass token through completion handler , but just in case passing
+            } else {
+                completion?(nil ,INError(message: error))
+            }
+        }
       ```
 
 ## About The Framework
@@ -182,40 +162,92 @@ This feature overrides a mobile device’s DND and silent mode features in order
 5. For further use, need to capture device tokens from the following delegates methods
    ```swift
    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken
-   deviceToken: Data){
-   let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
-   print("Pushtoken regular: \(deviceTokenString)")
+   deviceToken: Data) {
+            let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+            print("Pushtoken regular: \(deviceTokenString)")
    }
 
-   func pushRegistry(_ registry: PKPushRegistry, didUpdate credentials: PKPushCredentials, for type: PKPushType){
-   var pToken: String = ""
-    for i in 0 ..< credentials.token.count {
-     pToken += String(format: "%02.2hhx", credentials.token[i] as CVarArg)
+    public func pushRegistry(_ registry: PKPushRegistry, didUpdate credentials: PKPushCredentials, for type: PKPushType) {
+        debugPrint("pushRegistry didUpdate \(credentials) for \(type)")
+        var pToken: String = ""
+        for i in 0 ..< credentials.token.count {
+            pToken += String(format: "%02.2hhx", credentials.token[i] as CVarArg)
+        }        
+        INPushManager.voipPushToken = pToken
     }
-    print("Pushtoken voip: \(pToken)")
-   }
    ```
 7. In Order to receive PushKit notification / Regular notification from In-Telligent server, need to register captured device tokens (Regular Push token and VoIP Push token) with In-Telligent using OpenAPI method “registerPushKitToken” as bellow,
    ```swift
-   OpenAPI.registerPushKitToken(voipPushToken: voipPushToken, regularPushToken: regularPushToken){
-    (status) in 
-    completion(status)
-   }
+    static var regularPushToken: String {
+        get {
+            return UserDefaults.standard.string(forKey: "pushtoken_regular") ?? ""
+        }
+        set {
+            let currentToken = UserDefaults.standard.string(forKey: "pushtoken_regular")
+            if currentToken == "" || currentToken == nil{
+                debugPrint("First  regularPushToken has received : \(newValue)")
+                UserDefaults.standard.set(newValue, forKey: "pushtoken_regular")
+                /// OpenAPI.registerPushKitToken(voipPushToken: INPushManager.voipPushToken, regularPushToken: newValue)
+                // TODO: need to save initial token(wrong token) which is used in registerDeviceApi
+            }
+            if currentToken != "" &&  currentToken != nil {                
+                if currentToken != newValue {
+                    debugPrint("regularPushToken  has changed from \(currentToken ?? "") to New APNS token  : \(newValue)")
+                    UserDefaults.standard.set(newValue, forKey: "pushtoken_regular")
+                    OpenAPI.registerPushKitToken(voipPushToken: INPushManager.voipPushToken, regularPushToken: newValue)
+                }
+                if currentToken == newValue {
+                    debugPrint(" Current APNS regularPushToken is : \(currentToken ?? "")")
+                }
+            }
+        }
+    }
    ```
 8. When the Regular push notification payload is received on the delegate method, call the Open API method relayPushKitNotification and pass the received payload. The Open API library will handle the notification with the appropriate sound.
    ```swift
-   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void){
-    print(userInfo)
-    OpenAPI.relayPushKitNotification(dictionaryPayload: userInfo)
-   }
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        OpenAPI.relayPushKitNotification(dictionaryPayload: userInfo)
+        completionHandler(.newData)
+    }
    ```
 9. When the PushKit payload is received on the delegate method, call the Open API method relayPushKitNotification and pass the received payload.   The Open API library will handle the notification with the appropriate sound.
    ```swift
-   func pushRegistry(_ registry: PKPushRegistry, deidReceiveIncomingPushWith rawPayload: PKPushPayload, for type: PKPushType){
-    debugPrint("received push notification \(rawPayload.dictionaryPayload)")
-    // OpenAPI will parse your payload and play alert based on alert type.
-    OpenAPI.relayPushKitNotification(dictionaryPayload: rawPayload.dictionaryPayload)
-   }
+       public func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType, completion: @escaping () -> Void) {
+        print("TEST DUDE: Current ALERT TYPE: \( currentAlertType as Any) and payload alert type   \(getcurrentAlertType(payload.dictionaryPayload) as Any)")        
+        if currentRunningUUID != nil {
+            if getcurrentAlertType(payload.dictionaryPayload) == .lifeSafety && currentAlertType == .lifeSafety {
+                print("TEST DUDE: overrideing alert 1")
+                INCallKitManager.shared.reportCallStatus(with: .failed)
+                currentRunningUUID = nil
+                setUpPayload(payload.dictionaryPayload)
+                INCallKitManager.shared.setupCallProvider(payload: self.pushPayload)
+                return
+            } else if getcurrentAlertType(payload.dictionaryPayload) == .lifeSafety && currentAlertType == .critical {
+                print("TEST DUDE: overrideing alert 2")
+                INCallKitManager.shared.reportCallStatus(with: .failed)
+                currentRunningUUID = nil
+                setUpPayload(payload.dictionaryPayload)
+                INCallKitManager.shared.setupCallProvider(payload: self.pushPayload)
+                return
+            } else if getcurrentAlertType(payload.dictionaryPayload) == .critical && currentAlertType == .lifeSafety {
+                print("TEST DUDE: not overrideing alert 3")
+                currentRunningUUID = nil
+                INCallKitManager.shared.reportInvalidCall(payload.dictionaryPayload)
+                return
+            } else {
+                print("TEST DUDE: SAME ALERT but not overrideing alert")
+                currentRunningUUID = nil
+                INCallKitManager.shared.reportCallStatus(with: .failed)
+                setUpPayload(payload.dictionaryPayload)
+                INCallKitManager.shared.setupCallProvider(payload: self.pushPayload)
+                return
+            }
+        }
+            currentRunningUUID = nil
+            setUpPayload(payload.dictionaryPayload)
+            INCallKitManager.shared.setupCallProvider(payload: self.pushPayload)
+            completion()
+    }
    ``` 
 
 ##### How to test <a id='test-override-dnd-ios'>
@@ -333,15 +365,60 @@ To implement this functionality, the following steps must be taken.
 2. Community lists for a subscriber:
    After auto subscription has been invoked, handle delegate method - subscribedCommunities( ) – to get a list of all communities that a device has been auto subscribed.  The following is a code snippet for this method:
    ```swift
-   func subscribedCommunities(_ subscribedCommunities: [INCommunity]){
-    print(subscribedCommunities)
-   }
+       public static func getSubscribedCommunities() -> [INCommunity] {
+        INCommunityManager.shared.getSubscribedCommunities()
+    }
+    
+       public func getSubscribedCommunities() -> [INCommunity] {
+        do {
+            let realm = try Realm()
+            var predicateCommunity = NSPredicate(format: "subscription.isSubscribed == true &&  isDiscoverable == 1")
+            if INSessionManager.communityType != CommunityType.All.rawValue {
+                predicateCommunity = NSPredicate(format: "subscription.isSubscribed == true &&  isDiscoverable == 1 && type = %@",INSessionManager.communityType?.lowercased() ?? "physical")
+            }
+            let community = realm.objects(INCommunity.self).filter(predicateCommunity)
+            return Array(community)
+        } catch {
+            print(error.localizedDescription)
+        }
+        return []
+    }
    ```
 3. Permissions:
    Add following permissions to. plist.
    ```swift
-   // TODO:   add details
-   ```
+   <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>$(DEVELOPMENT_LANGUAGE)</string>
+    <key>CFBundleDisplayName</key>
+    <string>NotificationServiceExtension</string>
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundleIdentifier</key>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>$(PRODUCT_NAME)</string>
+    <key>CFBundlePackageType</key>
+    <string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+    <key>CFBundleShortVersionString</key>
+    <string>$(MARKETING_VERSION)</string>
+    <key>CFBundleVersion</key>
+    <string>$(CURRENT_PROJECT_VERSION)</string>
+    <key>NSExtension</key>
+    <dict>
+        <key>NSExtensionPointIdentifier</key>
+        <string>com.apple.usernotifications.service</string>
+        <key>NSExtensionPrincipalClass</key>
+        <string>$(PRODUCT_MODULE_NAME).NotificationService</string>
+    </dict>
+</dict>
+</plist>
+```
    
 ##### How to test <a id='test-auto-subscribe-ios'></a>
 1. Install and open the sample application.
@@ -371,30 +448,48 @@ To implement this functionality, the following steps must be taken.
 3. Notifications: After authentication and getting buildings the following method is used to get complete notification data according to notification ID.
    OpenAPI.getCompleteNotification()
    ```swift
-   OpenAPI.getCompleteNotification(notification_id){ notification in
-    print(notification.description)
-   } failure: { error in
-    print(error?.localizedDescription ?? "")
-   }
+         OpenAPI.getCompleteNotification(inNotification, inNotification.id) { notification in
+                completionCallBack(true, "")
+        } failure: { error, responseCode in
+            completionCallBack(false, error?.localizedDescription ?? "Something went Wrong")
+        }
    ```
 4. List of Languages: After getting building notifications, the following method is used to get a list of languages supported for Notification translation.
    INLanguageManager.getLanguages()
    ```swift
-   INLanguageManager.getLanguages({ [weak self] (languages) in
-    print(languages)
-   }) { error in
-        print(error?.localizedDescription ?? "")
-   }
+             INLanguageManager.getLanguages({ [weak self] (languages) in
+                DispatchQueue.main.async {
+                    self?.hideLoader()
+                    self?.promptLanguages(languages)
+                }
+            }, failure: { [weak self] (error,errorCode) in
+                DispatchQueue.main.async {
+                    self?.hideLoader()
+                    self?.showError(error)
+                }
+            })
    ```
 5. Notification Translation: The method INLanguageManager.getTranslation() is used to retrieve the translated message and the title of the message.
    Parameters: notification ID and target language.
    INLanguageManager.getTranslation()
    ```swift
-   INLanguageManager.getTranslation(for: communityNotification, to: language, success: { translatedNotification in
-    print(translatedNotification)
-   }) { error in
-        print(error?.localizedDescription ?? "")
-   }
+            INLanguageManager.getTranslation(for: notification, to: language) { (translation) in
+                
+                DispatchQueue.main.async {
+                    self.hideLoader()
+                    self.alertTitleLabel.text = translation.title
+                    self.alertDescriptionLabel.text = translation.message
+                    self.translatedLanguage = translation.language.code
+                }
+            } failure: { (error,errorCode) in
+                DispatchQueue.main.async {
+                    
+                    self.hideLoader()
+                    if errorCode == 404 || errorCode == 403 {
+                        self.showErrorMessage("There was an error connecting to the server".localized())
+                    } else { self.showError(error) }
+                }
+            }
    ```
    
 ##### How to test <a id='test-language-translation-ios'></a>
@@ -454,11 +549,10 @@ To implement this functionality, the following steps must be taken
    Required - Yes
    Type – Int
    ```swift
-   OpenAPI.openedAlert(notificationId: aNotification.id, success: {
-    //Handle success response
-   }) { (error) in
-    //Handle failure response
-   }
+          if let notification = notification {
+            API.markOpened(notification, success: nil, failure: nil)
+            self.getNotificationInfoCall(innotifcation: notification)
+        }
    ```
 
 ### Delete an alert
@@ -466,35 +560,23 @@ The delete alert feature will enable a user to delete an alert.
    
 #### iOS <a id='delete-alert-ios'></a>
 To implement this functionality, the following steps must be taken
-   1. Delete Alert: After authentication with community manager credentials, you will be able to access the below API call with the necessary information.
-      OpenAPI.deleteAlert(notificationId: notification_id)
-      **Parameters:**
-      **notificationId –**
-      Required - Yes
-      Type – Int
-      ```swift
-      OpenAPI.deleteAlert(notificationId: notification.id, success: {
-       //Handle success response
-      }) { (error) in
-       //Handle failure response
-      }
-      ```
+   1. Delete Alert: We are deleting the alert locally which is stored by the Realm.
+   '''swift
+           Realm.write { (blockRealm) in
+            blockRealm.delete(self)
+        }
+   '''
 
 ## Integration with In-Telligent
 Any partner application is required to integrate with In-Telligent systems to maintain user authentication and to send notifications from In-Telligent portals.
 In order to integrate, the following details have to be shared with the In-Telligent development team. Once the In-Telligent development team receives the information, it may take up to two days to integrate with In-Telligent systems.
-   1. Android<br>
-      To send push notifications from the In-Telligent portal, your application’s firebase FCM server key has to be shared with the In-Telligent development team. This key can be retrieved from the Firebase console app created in Section 5.1 point 3.
-         1. Locate the firebase project server key from the project created in Firebase console. (Project settings -> Cloud Messaging -> Server Key).
-         2. Share the details with the In-Telligent development team.
-   2. iOS<br>
+   1. iOS<br>
       To send Apple PushKit notifications from the In-Telligent portal, your application’s certificates are required.
          1. Generate a P12 file in KEYS section in the Apple developer portal.
          2. Download the generated file.
          3. Share the file with the In-Telligent development team.
 
 ## References
-   1. https://firebase.google.com/docs/cloud-messaging/android/client
    2. https://chrome.google.com/webstore/detail/restlet-client-rest-api-t/aejoelaoggembcahagimdiliamlcdmfm?hl=en
    3. https://console.firebase.google.com
    4. https://firebase.google.com/docs/cloud-messaging/server
