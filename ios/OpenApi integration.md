@@ -10,7 +10,7 @@
 >- [iOS](#requirements-ios)
 - [Setup Environment](#setup-environment)
 >- [iOS - Manually](#setup-ios-Manually)
->- [iOS - Pods](#iOS - Pods)
+>- [iOS - With Pods](#ios-withpods)
 - [Getting Started](#getting-started)
 >- [iOS](#start-ios)
 - [About The Framework](#about-the-framework)
@@ -108,7 +108,7 @@ The following describes the required Android and iOS integration dependencies fo
    mv "$FRAMEWORK_EXECUTABLE_PATH-merged" "$FRAMEWORK_EXECUTABLE_PATH"
    ```
    
-### iOS - Pods
+### iOS - With Pods
 1. Open the XCode project in which you would like to integrate this framework.
 2. Add pod 'OpenAPI' into the pod file.
 3. Import the following third-party dependency libraries along with the OpenAPI:
