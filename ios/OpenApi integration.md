@@ -9,7 +9,8 @@
 - [Requirements (Development Environment)](#requirements-development-environment)
 >- [iOS](#requirements-ios)
 - [Setup Environment](#setup-environment)
->- [iOS](#setup-ios)
+>- [iOS - Manually](#setup-ios-Manually)
+>- [iOS - With Pods](#setup-ios-Pod install)
 - [Getting Started](#getting-started)
 >- [iOS](#start-ios)
 - [About The Framework](#about-the-framework)
@@ -73,7 +74,7 @@ The alert notification can be translated into a different language for better re
 ## Setup Environment
 The following describes the required Android and iOS integration dependencies for the OpenAPI library.
 
-### iOS <a id='setup-ios'></a>
+### iOS - Manually <a id='setup-ios-Manually'></a>
 1. Open the XCode project in which you would like to integrate this framework.
 2. Drag and drop “OpenAPI.framework” into the bundle folder.
 3. Make sure this framework is added in both “Embedded Binaries” and “Linked Framework and libraries”
@@ -82,7 +83,6 @@ The following describes the required Android and iOS integration dependencies fo
    pod 'Alamofire', '~> 4.9.1’
    pod "RealmSwift", "3.17.3"
    pod "SwiftyJSON", "~> 5.0.0"
-   pod 'DeviceGuru'
    ```
 5. Install the above dependency frameworks by using cocoa pods.
    Ref: https://guides.cocoapods.org/using/getting-started.html
@@ -107,7 +107,17 @@ The following describes the required Android and iOS integration dependencies fo
    rm "$FRAMEWORK_EXECUTABLE_PATH"
    mv "$FRAMEWORK_EXECUTABLE_PATH-merged" "$FRAMEWORK_EXECUTABLE_PATH"
    ```
-
+   
+### iOS - With Pods <a id='setup-ios-Pod install'></a>
+1. Open the XCode project in which you would like to integrate this framework.
+2. Add pod 'OpenAPI' into the pod file.
+3. Import the following third-party dependency libraries along with the OpenAPI:
+   ```swift
+   pod 'Alamofire', '~> 4.9.1’
+   pod "RealmSwift", "3.17.3"
+   pod "SwiftyJSON", "~> 5.0.0"
+   ```
+   
 ## Getting Started
 ### iOS <a id='start-ios'></a>
 1. Authentication: Before we call any service from OpenAPI, we need to authenticate the Partner token which was received from In-Telligent.
