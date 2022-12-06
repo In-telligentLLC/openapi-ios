@@ -386,7 +386,7 @@ To implement this functionality, the following steps must be taken.
    ```
 3. Permissions:
    Add following permissions to. plist.
-   ```xml
+   
 <dict>
     <key>CFBundleDevelopmentRegion</key>
     <string>$(DEVELOPMENT_LANGUAGE)</string>
@@ -415,7 +415,6 @@ To implement this functionality, the following steps must be taken.
     </dict>
 </dict>
 </plist>
-```
    
 ##### How to test <a id='test-auto-subscribe-ios'></a>
 1. Install and open the sample application.
