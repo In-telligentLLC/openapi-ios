@@ -251,12 +251,14 @@ This feature overrides a mobile device’s DND and silent mode features in order
     }
    ``` 
    
-## Entitlements communitcation from Client App
+### Entitlements communitcation from Client App
+```
 1. In the project target -> Signin & Capabilities -> Select '+' Buttion -> Select APP GROUPS
     + Select '+' inside the App Group section
     + You will get the dialog box with (group.) 
     + Add the group package as ==group.(Your app Bundle Identifier)==.
 2. InsessionManager can able to access the group entitilements id from both App and notification extension. 
+```
 
 ##### How to test <a id='test-override-dnd-ios'>
 Using In-Telligent Portal:
