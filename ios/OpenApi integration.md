@@ -330,7 +330,8 @@ To implement this functionality, the following steps must be taken.
    ```
 3. Permissions:
    Add following permissions to. plist.
-   ```xml <- '<?xml version="1.0" encoding="UTF-8"?>
+    ```swift
+   <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -361,7 +362,7 @@ To implement this functionality, the following steps must be taken.
     </dict>
 </dict>
 </plist>
-'```
+```
    
 ##### How to test <a id='test-auto-subscribe-ios'></a>
 1. Install and open the sample application.
