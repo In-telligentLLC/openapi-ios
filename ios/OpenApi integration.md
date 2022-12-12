@@ -332,37 +332,33 @@ To implement this functionality, the following steps must be taken.
 3. Permissions:
    Add following permissions to. plist.
     ```swift
-   <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
 <dict>
-    <key>CFBundleDevelopmentRegion</key>
-    <string>$(DEVELOPMENT_LANGUAGE)</string>
-    <key>CFBundleDisplayName</key>
-    <string>NotificationServiceExtension</string>
-    <key>CFBundleExecutable</key>
-    <string>$(EXECUTABLE_NAME)</string>
-    <key>CFBundleIdentifier</key>
-    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-    <key>CFBundleInfoDictionaryVersion</key>
-    <string>6.0</string>
-    <key>CFBundleName</key>
-    <string>$(PRODUCT_NAME)</string>
-    <key>CFBundlePackageType</key>
-    <string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
-    <key>CFBundleShortVersionString</key>
-    <string>$(MARKETING_VERSION)</string>
-    <key>CFBundleVersion</key>
-    <string>$(CURRENT_PROJECT_VERSION)</string>
-    <key>NSExtension</key>
-    <dict>
-        <key>NSExtensionPointIdentifier</key>
-        <string>com.apple.usernotifications.service</string>
-        <key>NSExtensionPrincipalClass</key>
-        <string>$(PRODUCT_MODULE_NAME).NotificationService</string>
-    </dict>
+<key>CFBundleDevelopmentRegion</key>
+<string>$(DEVELOPMENT_LANGUAGE)</string>
+<key>CFBundleDisplayName</key>
+<string>NotificationServiceExtension</string>
+<key>CFBundleExecutable</key>
+<string>$(EXECUTABLE_NAME)</string>
+<key>CFBundleIdentifier</key>
+<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+<key>CFBundleInfoDictionaryVersion</key>
+<string>6.0</string>
+<key>CFBundleName</key>
+<string>$(PRODUCT_NAME)</string>
+<key>CFBundlePackageType</key>
+<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+<key>CFBundleShortVersionString</key>
+<string>$(MARKETING_VERSION)</string>
+<key>CFBundleVersion</key>
+<string>$(CURRENT_PROJECT_VERSION)</string>
+<key>NSExtension</key>
+<dict>
+<key>NSExtensionPointIdentifier</key>
+<string>com.apple.usernotifications.service</string>
+<key>NSExtensionPrincipalClass</key>
+<string>$(PRODUCT_MODULE_NAME).NotificationService</string>
 </dict>
-</plist>
+</dict>
 ```
    
 ##### How to test <a id='test-auto-subscribe-ios'></a>
@@ -503,11 +499,11 @@ The delete alert feature will enable a user to delete an alert.
 #### iOS <a id='delete-alert-ios'></a>
 To implement this functionality, the following steps must be taken
    1. Delete Alert: We are deleting the alert locally which is stored by the Realm.
-   '''swift
+   ```swift
            Realm.write { (blockRealm) in
             blockRealm.delete(self)
         }
-   '''
+   ```
 
 ## Integration with In-Telligent
 Any partner application is required to integrate with In-Telligent systems to maintain user authentication and to send notifications from In-Telligent portals.
