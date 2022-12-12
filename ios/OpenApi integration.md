@@ -114,7 +114,8 @@ The following describes the iOS integration dependencies for the OpenAPI library
    ```swift
    pod 'OpenAPI'
    ```
-##Dependencies
+### Dependencies
+
 3. Import the following third-party dependencies along with the OpenAPI:
    ```swift
    pod 'Alamofire', '~> 4.9.1’
