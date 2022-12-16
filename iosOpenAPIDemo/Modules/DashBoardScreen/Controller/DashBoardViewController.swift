@@ -10,6 +10,7 @@ import OpenAPI
 
 class DashBoardViewController: UIViewController {
     
+    // Variables
     @IBOutlet var sideMenuButton: UIBarButtonItem!
     @IBOutlet var CommunityTableView: UITableView!
     var revealView: SWRevealViewController! = nil
@@ -26,7 +27,7 @@ class DashBoardViewController: UIViewController {
     
     
     
-    //MARK: View life Cycle methods 
+    //MARK: View life Cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Communities List"
