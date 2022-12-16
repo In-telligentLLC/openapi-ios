@@ -26,6 +26,7 @@ class DashBoardViewController: UIViewController {
     
     
     
+    //MARK: View life Cycle methods 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Communities List"
