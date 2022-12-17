@@ -6,14 +6,13 @@
 //
 
 import UIKit
-import OpenAPI
 
 /*
 protocol DashboardCommunitiesCellDelegate: class {
   //  func didClickViewAll()
     func didSelectCommunity(_ community: INCommunity?)
 }
- */
+ 
 
 
 class DashBoardCommunitiesTableViewCell: UITableViewCell {
@@ -64,3 +63,5 @@ class DashBoardCommunitiesTableViewCell: UITableViewCell {
     }
     
 }
+
+*/

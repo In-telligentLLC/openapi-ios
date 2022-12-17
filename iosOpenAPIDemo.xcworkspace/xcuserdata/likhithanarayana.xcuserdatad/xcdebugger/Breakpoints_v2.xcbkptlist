@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6985574F-5484-4C4F-82D8-B7EA54B02B8C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../int-openapi-ios/OpenAPI/OpenAPI/OpenAPI/OpenAPI.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
-            landmarkName = "authorization(callback:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6985574F-5484-4C4F-82D8-B7EA54B02B8C - 4be65088fa5a12f6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in static OpenAPI.OpenAPI.authorization(callback: (Swift.String, Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "OpenAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/likhithanarayana/Desktop/int-openapi-ios/OpenAPI/OpenAPI/OpenAPI/OpenAPI.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "186"
-                  endingLineNumber = "186"
-                  offsetFromSymbolStart = "1016">
-               </Location>
-               <Location
-                  uuid = "6985574F-5484-4C4F-82D8-B7EA54B02B8C - 90eaf13b214c7f1a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #1 () -&gt; () in static OpenAPI.OpenAPI.authorization(callback: (Swift.String, Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "OpenAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/likhithanarayana/Desktop/int-openapi-ios/OpenAPI/OpenAPI/OpenAPI/OpenAPI.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "187"
-                  endingLineNumber = "187"
-                  offsetFromSymbolStart = "72">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "FB00E582-68C0-4164-A4DC-B5A668229135"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -66,54 +18,6 @@
             endingLineNumber = "18"
             landmarkName = "partnerUser(_:success:failure:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "80FAE5B4-7390-45B8-A5B9-61DE5835F914"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../int-openapi-ios/OpenAPI/OpenAPI/OpenAPI/OpenAPI.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "configure(to:partnerToken:currentSandboxType:callback:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "80FAE5B4-7390-45B8-A5B9-61DE5835F914 - d63aa9b78db46188"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static OpenAPI.OpenAPI.configure(to: OpenAPI.Environment, partnerToken: Swift.Optional&lt;Swift.String&gt;, currentSandboxType: OpenAPI.SandBoxEnvironment, callback: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "OpenAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/likhithanarayana/Desktop/int-openapi-ios/OpenAPI/OpenAPI/OpenAPI/OpenAPI.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "149"
-                  endingLineNumber = "149"
-                  offsetFromSymbolStart = "336">
-               </Location>
-               <Location
-                  uuid = "80FAE5B4-7390-45B8-A5B9-61DE5835F914 - 64704aec2c34856b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in static OpenAPI.OpenAPI.configure(to: OpenAPI.Environment, partnerToken: Swift.Optional&lt;Swift.String&gt;, currentSandboxType: OpenAPI.SandBoxEnvironment, callback: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "OpenAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/likhithanarayana/Desktop/int-openapi-ios/OpenAPI/OpenAPI/OpenAPI/OpenAPI.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "150"
-                  endingLineNumber = "150"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
