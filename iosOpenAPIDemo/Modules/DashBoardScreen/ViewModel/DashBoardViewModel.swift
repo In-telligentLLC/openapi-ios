@@ -10,24 +10,29 @@ import OpenAPI
 
 class DashBoardViewModel : NSObject {
     
+  /*
     var allCommunities: [INCommunity] = []
     var communitiesFetchCompletion: ((String?) -> Void)?
+    
+   */
     
     override init() {
         super.init()
         
-        let communities = OpenAPI.getSubscribedCommunities()
-        self.allCommunities = Array(communities)
+     //   let communities = OpenAPI.getSubscribedCommunities()
+      //  self.allCommunities = Array(communities)
     }
     
-    func getCommunities() {
+ /*   func getCommunities() {
         self.allCommunities = OpenAPI.getCommunities()
         communitiesFetchCompletion?(nil)
     }
     
+    */
     
 }
 
+/*
 extension DashBoardViewModel: INSubscriberManagerDelegate {
     
     func subscribedCommunities(_ subscribedCommunities: [INCommunity]) {
@@ -42,4 +47,6 @@ extension DashBoardViewModel: INSubscriberManagerDelegate {
         communitiesFetchCompletion?(nil)
     }
 }
+
+*/
 

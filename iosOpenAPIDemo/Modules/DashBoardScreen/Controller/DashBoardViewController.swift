@@ -15,6 +15,7 @@ class DashBoardViewController: UIViewController {
     @IBOutlet var CommunityTableView: UITableView!
     var revealView: SWRevealViewController! = nil
     
+    /*
     
     var viewModel = DashBoardViewModel()
     var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -25,14 +26,19 @@ class DashBoardViewController: UIViewController {
         }
     }
     
+    */
     
     
     //MARK: View life Cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Communities List"
-        setUpsideMenu()
-        self.setupCommunityTableView()
+        self.CommunityTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+     //   setUpsideMenu()
+        
+        /*
+       self.setupCommunityTableView()
         
         OpenAPI.configure(to: .uat, partnerToken: PartnerToken.getPartnerToken(),currentSandboxType: .dev)
         
@@ -46,8 +52,11 @@ class DashBoardViewController: UIViewController {
                 self.CommunityTableView.reloadData()
             }
         }
+         */
+        
     }
     
+    /*
     func setUpsideMenu() {
         revealView = self.revealViewController()
         sideMenuButton.target = revealView
@@ -78,25 +87,34 @@ class DashBoardViewController: UIViewController {
             }
         }
     }
-    
+   
+     */
 }
 
+    
+    
 extension DashBoardViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.allCommunities.count
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        let cell = CommunityTableView.dequeueReusableCell(withIdentifier: "cell")
+        cell?.textLabel?.text = "Communities"
+        return cell!
+        /*
         if cell == nil {
-            cell =  UITableViewCell(style: .default, reuseIdentifier: "cell")
+            cell =  UITableViewCell(style: .default, reuseIdentifier: "cell"
         }
         
        // cell?.textLabel?.text = self.viewModel.allCommunities
         self.nearbyCommunitiesCount = self.viewModel.allCommunities.count
         return cell!
+         */
+        
     }
 }
+
 
 

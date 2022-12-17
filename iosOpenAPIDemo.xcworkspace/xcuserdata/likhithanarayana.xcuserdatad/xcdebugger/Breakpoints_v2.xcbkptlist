@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CA75880E-197D-4017-AEA6-720D5100D731"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iosOpenAPIDemo/Modules/LoginScreen/Controller/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "LoginWithDetails(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CA75880E-197D-4017-AEA6-720D5100D731 - 616c69300044e4f8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iosOpenAPIDemo.LoginViewController.LoginWithDetails(Any) -&gt; ()"
-                  moduleName = "iosOpenAPIDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/likhithanarayana/Desktop/iosOpenAPIDemo/iosOpenAPIDemo/Modules/LoginScreen/Controller/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "CA75880E-197D-4017-AEA6-720D5100D731 - 41a88fdd5ce200c1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String, Swift.Bool) -&gt; () in iosOpenAPIDemo.LoginViewController.LoginWithDetails(Any) -&gt; ()"
-                  moduleName = "iosOpenAPIDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/likhithanarayana/Desktop/iosOpenAPIDemo/iosOpenAPIDemo/Modules/LoginScreen/Controller/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "6985574F-5484-4C4F-82D8-B7EA54B02B8C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"

@@ -8,13 +8,17 @@
 import UIKit
 import OpenAPI
 
+/*
 protocol DashboardCommunitiesCellDelegate: class {
   //  func didClickViewAll()
     func didSelectCommunity(_ community: INCommunity?)
 }
+ */
+
 
 class DashBoardCommunitiesTableViewCell: UITableViewCell {
 
+ /*
     weak var delegate: DashboardCommunitiesCellDelegate?
     
     var communities: [INCommunity]? {
@@ -25,8 +29,14 @@ class DashBoardCommunitiesTableViewCell: UITableViewCell {
 //             //   guard let height = self.tababarHeight else {return }
             }
         }
-    }
+  
     
+    }
+  */
+    
+    /*
+     
+     
     func tableviewReload() {
         if communities?.count == 0 {
             print("No communities fetched")
@@ -38,6 +48,8 @@ class DashBoardCommunitiesTableViewCell: UITableViewCell {
             print("Fetched all the communities")
         }
     }
+     */
+    
     override func awakeFromNib() {
         super.awakeFromNib()
        
