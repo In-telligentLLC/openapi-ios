@@ -20,6 +20,7 @@ class SplashViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         // if user is a registered user move to dash board activity.
+       // OpenAPI.configure(to: .dev, partnerToken: PartnerToken.getPartnerToken())
         if (OpenAPI.checkToken()) {
             if let controller = storyboard.instantiateViewController(withIdentifier: "DashBoardViewController") as? DashBoardViewController {
                 self.window!.rootViewController = UINavigationController(rootViewController: controller)

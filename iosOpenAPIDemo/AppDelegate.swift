@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.registerForRemoteNotifications()
+        
         OpenAPI.configure(to: .dev, partnerToken: PartnerToken.getPartnerToken())
+        
         return true
     }
     
@@ -54,6 +56,26 @@ extension AppDelegate {
     }
 }
 
+extension AppDelegate {
+    
+    static func havePushTokens() -> Bool {
+        if INPushManager.voipPushToken != "" && INPushManager.regularPushToken != "" {
+            return true
+        }
+        return false
+    }
+    
+    static var isPushRegistered: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "is_push_registered")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "is_push_registered")
+            UserDefaults.standard.synchronize()
+        }
+    }
+}
+
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
     // registering for remote notification permissions
@@ -72,6 +94,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let deviceTokenString = deviceToken.reduce("", { $0 + String(format: "%02X", $1) })
         INPushManager.regularPushToken = deviceTokenString
+        print("APN's Device Token \(deviceTokenString)")
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
