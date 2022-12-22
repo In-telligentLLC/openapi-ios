@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.registerForRemoteNotifications()
         
-        OpenAPI.configure(to: .dev, partnerToken: PartnerToken.getPartnerToken())
+        OpenAPI.configure(to: .dev, partnerToken: PartnerToken.getPartnerToken(), currentSandboxType: .dev)
         
         return true
     }

@@ -14,7 +14,7 @@ import SwiftyJSON
 
 class DashBoardViewController: UIViewController {
     
-    // Variables
+    // Variables declaration
     @IBOutlet var sideMenuButton: UIBarButtonItem!
     @IBOutlet var CommunityTableView: UITableView!
     var revealView: SWRevealViewController! = nil
@@ -35,9 +35,18 @@ class DashBoardViewController: UIViewController {
         OpenAPI.start(self)
         
         self.CommunityTableView.register(UINib(nibName: "DashBoardCommunitiesTableViewCell", bundle: .main), forCellReuseIdentifier: "DashBoardCommunitiesTableViewCell")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didSubscribeToCommunities(notification:)), name: .subscriptionProcessDidComplete, object: nil)
+        
+        self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
+    }
+    
+    @objc func didSubscribeToCommunities(notification: Notification) {
+        self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
+        self.CommunityTableView.reloadData()
     }
 }
-
+//MARK: tableView Delegate,DataSource Methods
 extension DashBoardViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,10 +74,9 @@ extension DashBoardViewController : UITableViewDelegate, UITableViewDataSource {
 extension DashBoardViewController : INSubscriberManagerDelegate {
     
     func subscribedCommunities(_ subscribedCommunities: [INCommunity]) {
-        self.subscribedCommunities = subscribedCommunities
-        DispatchQueue.main.async { [weak self] in
-            self?.CommunityTableView.reloadData()
-        }
-        print("subscribedCommunities", self.subscribedCommunities)
+        self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
+        CommunityTableView.reloadData()
     }
 }
+
+
