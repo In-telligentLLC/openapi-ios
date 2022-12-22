@@ -8,6 +8,7 @@
 import UIKit
 import OpenAPI
 import CoreLocation
+import SVProgressHUD
 
 class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
     
@@ -23,7 +24,7 @@ class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     //IBAction to perform when sign-in button is tapped
     @IBAction func LoginWithDetails(_ sender: Any) {
-        
+        SVProgressHUD.show()
         OpenAPI.authorization() { error, status in
             if status {
                 let scene = UIApplication.shared.connectedScenes.first
@@ -31,6 +32,7 @@ class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let controller = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
                     window.window?.rootViewController = controller
+                    DispatchQueue.main.async { SVProgressHUD.dismiss() }
                 }
             } else {
                 self.showAlertWithMessage("Fill required fields or something went wrong, please try again.")
@@ -53,5 +55,5 @@ extension LoginViewController : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue : CLLocationCoordinate2D = manager.location?.coordinate else { return }
     }
-
+    
 }

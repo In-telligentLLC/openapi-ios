@@ -52,7 +52,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     /// creating a dummy splash screen for 1sec time interval, which launches when a app is launched for the first time.
     private func splashScreen() {
-        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(dissmissSplashController), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(dissmissSplashController), userInfo: nil, repeats: false)
     }
     
     /// launching dash board after the launching of splash screen.

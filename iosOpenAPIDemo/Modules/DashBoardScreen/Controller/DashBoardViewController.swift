@@ -23,40 +23,52 @@ class DashBoardViewController: UIViewController {
     //MARK: View life Cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.backgroundColor = .blue
+        
         revealView = self.revealViewController()
         sideMenuButton.target = revealView
         sideMenuButton.action = #selector(revealView?.revealToggle(_:))
+        
         self.title = "Communities List"
-        self.CommunityTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
-        //   subscribedCommunities = []
+        
         OpenAPI.start(self)
-        self.CommunityTableView.reloadData()
+        
+        self.CommunityTableView.register(UINib(nibName: "DashBoardCommunitiesTableViewCell", bundle: .main), forCellReuseIdentifier: "DashBoardCommunitiesTableViewCell")
     }
 }
 
 extension DashBoardViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         if subscribedCommunities.count == 0 {
             CommunityTableView.setMessage("No communities found at this moment")
         } else {
             CommunityTableView.clearBackground()
         }
-        return subscribedCommunities.count
+        return self.subscribedCommunities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = CommunityTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let community = subscribedCommunities[indexPath.row]
-        cell.textLabel?.text = community.name
+        let cell = CommunityTableView.dequeueReusableCell(withIdentifier: "DashBoardCommunitiesTableViewCell", for: indexPath) as! DashBoardCommunitiesTableViewCell
+        let community = self.subscribedCommunities[indexPath.row]
+        cell.CommunityCellLabel.text = community.name
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
     }
 }
 
 extension DashBoardViewController : INSubscriberManagerDelegate {
     
     func subscribedCommunities(_ subscribedCommunities: [INCommunity]) {
-        print(subscribedCommunities)
+        self.subscribedCommunities = subscribedCommunities
+        DispatchQueue.main.async { [weak self] in
+            self?.CommunityTableView.reloadData()
+        }
+        print("subscribedCommunities", self.subscribedCommunities)
     }
 }
