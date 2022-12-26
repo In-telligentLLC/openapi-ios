@@ -53,8 +53,8 @@ In-telligent system comes with geofence based communities to group audience. Thi
 
 ## Requirements
 
-- Xcode 13 above
-- iOS Mobile Version 14.0 and above
+- Xcode 13.4.1 and swift version 5.6.1
+- iOS Mobile Version 13.0 and above
 - Open API library file or with Pod
 - Partner Token (Partner token is to authenticate your app as client. If you don’t have the partner token, email us at support@in-telligent.com)
 - Apple developer account
@@ -71,6 +71,12 @@ In-telligent system comes with geofence based communities to group audience. Thi
    ```swift
    pod 'OpenAPI'
    ```
+3. Import the following third-party dependencies along with the OpenAPI:
+   ```swift
+   pod 'Alamofire', '~> 4.9.1’
+   pod "RealmSwift", "3.17.3"
+   pod "SwiftyJSON", "~> 5.0.0"
+   ```
    
 #### Install framework Manually <a id='setup-ios-manually'></a>
 1. Open the XCode project in which you would like to integrate this framework.
@@ -80,8 +86,7 @@ In-telligent system comes with geofence based communities to group audience. Thi
    ```swift
    pod 'Alamofire', '~> 4.9.1’
    pod "RealmSwift", "3.17.3"
-   pod "SwiftyJSON"
-   , "~> 5.0.0"
+   pod "SwiftyJSON", "~> 5.0.0"
    ```
 5. Install the above dependency frameworks by using cocoa pods.
    Ref: https://guides.cocoapods.org/using/getting-started.html
@@ -106,46 +111,6 @@ In-telligent system comes with geofence based communities to group audience. Thi
    rm "$FRAMEWORK_EXECUTABLE_PATH"
    mv "$FRAMEWORK_EXECUTABLE_PATH-merged" "$FRAMEWORK_EXECUTABLE_PATH"
    ```
-### Dependencies
-
-3. Import the following third-party dependencies along with the OpenAPI:
-   ```swift
-   pod 'Alamofire', '~> 4.9.1’
-   pod "RealmSwift", "3.17.3"
-   pod "SwiftyJSON", "~> 5.0.0"
-   ```
-
-Permissions:
-   Add following permissions to. plist.
-```
-<dict>
-<key>CFBundleDevelopmentRegion</key>
-<string>$(DEVELOPMENT_LANGUAGE)</string>
-<key>CFBundleDisplayName</key>
-<string>NotificationServiceExtension</string>
-<key>CFBundleExecutable</key>
-<string>$(EXECUTABLE_NAME)</string>
-<key>CFBundleIdentifier</key>
-<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-<key>CFBundleInfoDictionaryVersion</key>
-<string>6.0</string>
-<key>CFBundleName</key>
-<string>$(PRODUCT_NAME)</string>
-<key>CFBundlePackageType</key>
-<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
-<key>CFBundleShortVersionString</key>
-<string>$(MARKETING_VERSION)</string>
-<key>CFBundleVersion</key>
-<string>$(CURRENT_PROJECT_VERSION)</string>
-<key>NSExtension</key>
-<dict>
-<key>NSExtensionPointIdentifier</key>
-<string>com.apple.usernotifications.service</string>
-<key>NSExtensionPrincipalClass</key>
-<string>$(PRODUCT_MODULE_NAME).NotificationService</string>
-</dict>
-</dict>
-```
 ## Authentication
 Authentication is mandatory to use any service from OpenAPI.
    There are 2 methods for the authentication process:
@@ -157,7 +122,6 @@ Authentication is mandatory to use any service from OpenAPI.
                 KeyChainStorage.shared.token = OpenAPI.token
                 OpenAPI.start(self)
                 completion?(OpenAPI.token, nil)
-                //still not required to pass token through completion handler , but just in case passing
             } else {
                 completion?(nil ,INError(message: error))
             }
@@ -181,12 +145,11 @@ In Order to receive PushKit notification / Regular notification from In-Telligen
     + Remote notifications
 2. In Capabilities, enable Push notifications.
 3. Register the application with the bundle identifier in apple developer website (https://developer.apple.com/) and enable VOIP services on the apple developer portal with the app ID and then create:
-    1. Certificates: (Refer to the attached document - iOS Certificates creation process)
-    2. Profiles: (Refer to the attached document - iOS Certificates creation process)
+    1. Certificates
+    2. Profiles
     3. Integrate: Install certificates by double clicking on the certificates. This is to run the development application in iPhone physical device and to send push notification using Pusher client.
-       Ref: (attached document – iOS Certificates creation process)
 4. For VOIP services,
-   + Generate a P8 file in KEYS section in developer portal (Ref: attached document – iOS Certificates creation process)
+   + Generate a P8 file in KEYS section in developer portal
    + Download the generated file
    + Integrate the above certificates with backend web services, which will initiate the notification (app owner’s server)
 5. For further use, need to capture device tokens from the following delegates methods
@@ -309,8 +272,8 @@ The above method will handle the following functionality:
 ## How to test
 + Create new communities from the web portal
 + Launch In-Telligent web portal
-+ Prod: https://app.in-telligent.com/
-+ Dev: https://app.uat.in-telligent.com/
++ Prod: https://app.in-telligent.com/
++ Dev: https://app.uat.in-telligent.com/
 + Login using valid credentials (Community Manager / Admin).
 + Create new community from communities tab.
 + Newly created community should be auto-subscribed and listed in device on location changed / on app launch / after a specific time period (Syncing the latest changes is expected to happen in max of 12 hours in the client application). 
@@ -323,12 +286,10 @@ To get supported languages
 INLanguageManager.getLanguages({ [weak self] (languages) in
              DispatchQueue.main.async {
                  self?.hideLoader()
-                 ///
              }
          }, failure: { [weak self] (error,errorCode) in
              DispatchQueue.main.async {
                  self?.hideLoader()
-                 ///
              }
          })
 
@@ -339,7 +300,6 @@ INLanguageManager.getTranslation(for: notification, to: language) { (translation
              
              DispatchQueue.main.async {
                  self.hideLoader()
-                 ///
              }
          } failure: { (error,errorCode) in
              DispatchQueue.main.async {
