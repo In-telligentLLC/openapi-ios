@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class SideMenuViewController: UIViewController {
     
     var fields = ["Home", "Search Communitites", "Private Communitites"]
@@ -34,11 +33,7 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath {
         case [0,0] :
             print("Home")
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "DashBoardViewController") as? DashBoardViewController {
-                let navignController = revealViewController().frontViewController as! UINavigationController
-                navignController.pushViewController(vc, animated: true)
-                revealViewController().pushFrontViewController(navignController, animated: true)
-            }
+            revealViewController().revealToggle(animated: true)
         case [0,1]:
             print("Search Communities")
             if let vc = storyboard?.instantiateViewController(withIdentifier: "SearchCommunitiesViewController") as? SearchCommunitiesViewController {

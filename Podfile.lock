@@ -9,16 +9,19 @@ PODS:
   - Realm/Headers (3.17.3)
   - RealmSwift (3.17.3):
     - Realm (= 3.17.3)
+  - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - OpenAPI (from `../int-openapi-ios/OpenAPI`)
+  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Realm
     - RealmSwift
+    - SVProgressHUD
     - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -30,8 +33,9 @@ SPEC CHECKSUMS:
   OpenAPI: 56e6e07791764f419a8a4315c014a19cf2de7fec
   Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
   RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 1cbf8898539ca671fe5867e368b9501a7d846d62
+PODFILE CHECKSUM: de16591c832942b94076374dcda136e0d2960c8a
 
 COCOAPODS: 1.11.2

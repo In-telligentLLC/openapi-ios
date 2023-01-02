@@ -17,6 +17,7 @@
 		4D4B7860294886D40041B424 /* DashBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B785F294886D40041B424 /* DashBoardViewModel.swift */; };
 		4D4B7865294886F10041B424 /* DashBoardCommunitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B7863294886F10041B424 /* DashBoardCommunitiesTableViewCell.swift */; };
 		4D4B7866294886F10041B424 /* DashBoardCommunitiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4B7864294886F10041B424 /* DashBoardCommunitiesTableViewCell.xib */; };
+		4D5B08D12951846B00B3D324 /* DashBoardTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B08D02951846B00B3D324 /* DashBoardTableViewExtension.swift */; };
 		4D607B372940752900E20ACA /* PartnerTokenFIle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D607B362940752900E20ACA /* PartnerTokenFIle.swift */; };
 		4D76ED0F293DAD3F00467F33 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D76ED0E293DAD3F00467F33 /* SWRevealViewController.m */; };
 		4D76ED1E293DCEE000467F33 /* AlertListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76ED1D293DCEE000467F33 /* AlertListViewController.swift */; };
@@ -60,6 +61,7 @@
 		4D4B785F294886D40041B424 /* DashBoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashBoardViewModel.swift; sourceTree = "<group>"; };
 		4D4B7863294886F10041B424 /* DashBoardCommunitiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashBoardCommunitiesTableViewCell.swift; sourceTree = "<group>"; };
 		4D4B7864294886F10041B424 /* DashBoardCommunitiesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashBoardCommunitiesTableViewCell.xib; sourceTree = "<group>"; };
+		4D5B08D02951846B00B3D324 /* DashBoardTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardTableViewExtension.swift; sourceTree = "<group>"; };
 		4D607B362940752900E20ACA /* PartnerTokenFIle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerTokenFIle.swift; sourceTree = "<group>"; };
 		4D607B402940C19F00E20ACA /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		4D607B422940C19F00E20ACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,6 +202,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		4D5B08CF295182EF00B3D324 /* DashBoardScreenHelper */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B08D02951846B00B3D324 /* DashBoardTableViewExtension.swift */,
+			);
+			path = DashBoardScreenHelper;
+			sourceTree = "<group>";
+		};
 		4D607B352940750600E20ACA /* PartnerTokenInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +221,7 @@
 		4D607B3829407A1700E20ACA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				4D5B08CF295182EF00B3D324 /* DashBoardScreenHelper */,
 				4D607B352940750600E20ACA /* PartnerTokenInfo */,
 			);
 			path = Helpers;
@@ -513,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D5B08D12951846B00B3D324 /* DashBoardTableViewExtension.swift in Sources */,
 				4D2B64292938AA50006DB4D1 /* DashBoardViewController.swift in Sources */,
 				4D607B372940752900E20ACA /* PartnerTokenFIle.swift in Sources */,
 				4D76ED32293DE7EA00467F33 /* PrivateCommunityTableViewCell.swift in Sources */,
@@ -691,7 +703,6 @@
 				"EXCLUDED_ARCHS[sdk=*]" = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iosOpenAPIDemo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "OpenAPI Demo";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = Yes;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = Yes;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = Yes;
@@ -734,7 +745,6 @@
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iosOpenAPIDemo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "OpenAPI Demo";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = Yes;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = Yes;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = Yes;

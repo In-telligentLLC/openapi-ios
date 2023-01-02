@@ -10,6 +10,7 @@ target 'iosOpenAPIDemo' do
 #pod 'RealmSwift', '3.17.3'
 #pod 'SwiftyJSON', '~> 5.0.0'
 pod 'OpenAPI', :path => '../int-openapi-ios/OpenAPI'
+pod 'SVProgressHUD' 
   # Pods for iosOpenAPIDemo
 
 

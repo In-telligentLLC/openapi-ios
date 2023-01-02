@@ -7,94 +7,75 @@
 
 import UIKit
 import OpenAPI
+import PushKit
+import UserNotifications
+import AVFoundation
+import SwiftyJSON
 
 class DashBoardViewController: UIViewController {
     
+    // Variables declaration
     @IBOutlet var sideMenuButton: UIBarButtonItem!
     @IBOutlet var CommunityTableView: UITableView!
     var revealView: SWRevealViewController! = nil
+    var subscribedCommunities : [INCommunity] = []
     
-    
-    var viewModel = DashBoardViewModel()
-    var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    var nearbyCommunitiesCount: Int = 0 {
-        didSet {
-            nearbyCommunitiesCount = self.viewModel.allCommunities.count
-        }
-    }
-    
-    
-    
-    //MARK: View life Cycle methods 
+    //MARK: View life Cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Communities List"
-        setUpsideMenu()
-        self.setupCommunityTableView()
         
-        OpenAPI.configure(to: .uat, partnerToken: PartnerToken.getPartnerToken(),currentSandboxType: .dev)
+        self.navigationController?.navigationBar.backgroundColor = .blue
         
-        
-        self.viewModel.communitiesFetchCompletion = { error in
-            DispatchQueue.main.async {
-
-                if let error = error {
-                    self.showErrorMessage(error)
-                }
-                self.CommunityTableView.reloadData()
-            }
-        }
-    }
-    
-    func setUpsideMenu() {
         revealView = self.revealViewController()
         sideMenuButton.target = revealView
         sideMenuButton.action = #selector(revealView?.revealToggle(_:))
-        self.revealViewController().tapGestureRecognizer().isEnabled = true
-        self.revealViewController().panGestureRecognizer().isEnabled = true
-    }
-    
-    func setupCommunityTableView() {
-
-     //   CommunityTableView.registerNib(DashboardCommunitiesCollectionViewCell.self)
         
-        CommunityTableView.delegate = self
-        CommunityTableView.dataSource = self
-        CommunityTableView.reloadData()
-    }
-    
-    func setupCommunities(from: String) {
+        self.title = "Communities List"
         
-        self.viewModel.getCommunities()
-        self.viewModel.communitiesFetchCompletion = { error in
-            DispatchQueue.main.async {
-
-                if let error = error {
-                print("Error")
-                }
-                self.CommunityTableView.reloadData()
-            }
-        }
+        OpenAPI.start(self)
+        
+        self.CommunityTableView.register(UINib(nibName: "DashBoardCommunitiesTableViewCell", bundle: .main), forCellReuseIdentifier: "DashBoardCommunitiesTableViewCell")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didSubscribeToCommunities(notification:)), name: .subscriptionProcessDidComplete, object: nil)
+        
+        self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
     }
     
+    @objc func didSubscribeToCommunities(notification: Notification) {
+        self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
+        self.CommunityTableView.reloadData()
+    }
 }
-
+//MARK: tableView Delegate,DataSource Methods
 extension DashBoardViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.allCommunities.count
+        
+        if subscribedCommunities.count == 0 {
+            CommunityTableView.setMessage("No communities found at this moment")
+        } else {
+            CommunityTableView.clearBackground()
+        }
+        return self.subscribedCommunities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        if cell == nil {
-            cell =  UITableViewCell(style: .default, reuseIdentifier: "cell")
-        }
-        
-       // cell?.textLabel?.text = self.viewModel.allCommunities
-        self.nearbyCommunitiesCount = self.viewModel.allCommunities.count
-        return cell!
+        let cell = CommunityTableView.dequeueReusableCell(withIdentifier: "DashBoardCommunitiesTableViewCell", for: indexPath) as! DashBoardCommunitiesTableViewCell
+        let community = self.subscribedCommunities[indexPath.row]
+        cell.CommunityCellLabel.text = community.name
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
+    }
+}
+
+extension DashBoardViewController : INSubscriberManagerDelegate {
+    
+    func subscribedCommunities(_ subscribedCommunities: [INCommunity]) {
+        self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
+        CommunityTableView.reloadData()
     }
 }
 
