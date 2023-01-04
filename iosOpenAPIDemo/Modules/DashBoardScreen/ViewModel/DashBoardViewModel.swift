@@ -56,8 +56,6 @@ class DashBoardViewModel : NSObject {
         })
     }
     
-    
-    
     func checkPermissions(called:String, viewController: DashBoardViewController) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [self] in
             if !self.areLocationPermissionsAllowed {

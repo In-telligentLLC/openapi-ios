@@ -41,11 +41,11 @@ class DashBoardViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(didSubscribeToCommunities(notification:)), name: .subscriptionProcessDidComplete, object: nil)
         
-       self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
-         self.viewModel.checkForNotificationPermissions(viewController: self)
-         INGeofencer.shared.didUpdateLocationStatus = { _ in
-             self.viewModel.checkPermissions(called: "didUpdateLocationStatus" , viewController: self)
-         }
+        self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
+        self.viewModel.checkForNotificationPermissions(viewController: self)
+        INGeofencer.shared.didUpdateLocationStatus = { _ in
+            self.viewModel.checkPermissions(called: "didUpdateLocationStatus" , viewController: self)
+        }
     }
     
     @objc func didSubscribeToCommunities(notification: Notification) {
@@ -79,7 +79,6 @@ extension DashBoardViewController : UITableViewDelegate, UITableViewDataSource {
         return 100.0
     }
 }
-
 
 extension DashBoardViewController: INSubscriberManagerDelegate {
     
