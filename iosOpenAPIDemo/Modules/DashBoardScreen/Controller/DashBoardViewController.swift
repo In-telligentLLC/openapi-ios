@@ -22,6 +22,7 @@ class DashBoardViewController: UIViewController {
     var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
     var viewModel = DashBoardViewModel()
     
+    
     //MARK: View life Cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,49 +41,17 @@ class DashBoardViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(didSubscribeToCommunities(notification:)), name: .subscriptionProcessDidComplete, object: nil)
         
-        self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
-        checkForNotificationPermissions()
-                INGeofencer.shared.didUpdateLocationStatus = { _ in
-                    self.checkPermissions(called: "didUpdateLocationStatus")
-                }
-        
+       self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
+         self.viewModel.checkForNotificationPermissions(viewController: self)
+         INGeofencer.shared.didUpdateLocationStatus = { _ in
+             self.viewModel.checkPermissions(called: "didUpdateLocationStatus" , viewController: self)
+         }
     }
     
     @objc func didSubscribeToCommunities(notification: Notification) {
         self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
-        self.CommunityTableView.reloadData()
-    }
-    
-    func checkForNotificationPermissions() {
-        let current = UNUserNotificationCenter.current()
-        current.getNotificationSettings(completionHandler: { (settings) in
-            switch settings.authorizationStatus {
-            case .notDetermined:
-               self.appDelegate.registerForRemoteNotifications()
-            case .denied:
-                DispatchQueue.main.async {
-                    self.showSettingsAlert(type: "Notifications")
-                }
-                break
-            case .authorized:
-              self.appDelegate.registerForRemoteNotifications()
-                break
-            default:
-                break
-            }
-        })
-    }
-    
-    func checkPermissions(called:String) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            if !self.viewModel.areLocationPermissionsAllowed {
-                if OpenAPI.doesClientRequiresLocationPermissions {
-                    self.showSettingsAlert(type: "Location")
-                }
-            }
-        }
-        if !INPushManager.shared.havePushTokens() {
-            self.showSettingsAlert(type: "Notifications")
+        DispatchQueue.main.async {
+            self.CommunityTableView.reloadData()
         }
     }
 }
@@ -111,12 +80,15 @@ extension DashBoardViewController : UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension DashBoardViewController : INSubscriberManagerDelegate {
+
+extension DashBoardViewController: INSubscriberManagerDelegate {
     
     func subscribedCommunities(_ subscribedCommunities: [INCommunity]) {
-        self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
-        CommunityTableView.reloadData()
+        DispatchQueue.main.async {
+            self.CommunityTableView.reloadData()
+        }
     }
 }
+
 
 
