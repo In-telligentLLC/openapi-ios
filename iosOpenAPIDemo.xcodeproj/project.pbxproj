@@ -221,6 +221,7 @@
 		4D607B3829407A1700E20ACA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				4DE72E5629633B8400305130 /* PermissionsHelper */,
 				4D5B08CF295182EF00B3D324 /* DashBoardScreenHelper */,
 				4D607B352940750600E20ACA /* PartnerTokenInfo */,
 			);
@@ -384,6 +385,13 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4DE72E5629633B8400305130 /* PermissionsHelper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PermissionsHelper;
 			sourceTree = "<group>";
 		};
 		61B7F936AF72E60D94272389 /* Pods */ = {

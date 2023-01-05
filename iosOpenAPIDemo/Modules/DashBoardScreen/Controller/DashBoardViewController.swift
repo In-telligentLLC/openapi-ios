@@ -19,6 +19,9 @@ class DashBoardViewController: UIViewController {
     @IBOutlet var CommunityTableView: UITableView!
     var revealView: SWRevealViewController! = nil
     var subscribedCommunities : [INCommunity] = []
+    var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    var viewModel = DashBoardViewModel()
+    
     
     //MARK: View life Cycle methods
     override func viewDidLoad() {
@@ -39,11 +42,17 @@ class DashBoardViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(didSubscribeToCommunities(notification:)), name: .subscriptionProcessDidComplete, object: nil)
         
         self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
+        self.viewModel.checkForNotificationPermissions(viewController: self)
+        INGeofencer.shared.didUpdateLocationStatus = { _ in
+            self.viewModel.checkPermissions(called: "didUpdateLocationStatus" , viewController: self)
+        }
     }
     
     @objc func didSubscribeToCommunities(notification: Notification) {
         self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
-        self.CommunityTableView.reloadData()
+        DispatchQueue.main.async {
+            self.CommunityTableView.reloadData()
+        }
     }
 }
 //MARK: tableView Delegate,DataSource Methods
@@ -71,12 +80,14 @@ extension DashBoardViewController : UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension DashBoardViewController : INSubscriberManagerDelegate {
+extension DashBoardViewController: INSubscriberManagerDelegate {
     
     func subscribedCommunities(_ subscribedCommunities: [INCommunity]) {
-        self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
-        CommunityTableView.reloadData()
+        DispatchQueue.main.async {
+            self.CommunityTableView.reloadData()
+        }
     }
 }
+
 
 

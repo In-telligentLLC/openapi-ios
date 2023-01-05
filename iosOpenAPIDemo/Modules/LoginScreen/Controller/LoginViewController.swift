@@ -12,9 +12,6 @@ import SVProgressHUD
 
 class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
     
-    // creating an instance of CLLocationManager.
-    let locationManager = CLLocationManager()
-    
     // IBoutlet for signup button.
     @IBOutlet var signUpButton: UIButton!
     
@@ -50,10 +47,3 @@ class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
 }
 
-extension LoginViewController : CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue : CLLocationCoordinate2D = manager.location?.coordinate else { return }
-    }
-    
-}
