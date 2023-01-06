@@ -53,7 +53,16 @@ In-telligent system comes with geofence based communities to group audience. Thi
 
 ## Requirements
 
-- Xcode 13.4.1 and swift version 5.6.1
+- Versions of OpenAPI with Xcode compatability:
+    ```
+        For Xcode 13.2.1 -> OpenAPI version - v 1.0.3
+            Xcode 13.3.1 -> OpenAPI version - v 1.0.4
+            Xcode 13.4.1 -> OpenAPI version - v 1.0.5
+            Xcode 14.0.0 -> OpenAPI version - v 1.0.6
+            Xcode 14.0.1 -> OpenAPI version -  v 1.0.7
+            Xcode 14.1 -> OpenAPI version - v 1.0.8
+            Xcode 14.2 -> OpenAPI version - v 1.0.9
+    ```
 - iOS Mobile Version 13.0 and above
 - Open API library file or with Pod
 - Partner Token (Partner token is to authenticate your app as client. If you don’t have the partner token, email us at support@in-telligent.com)
@@ -77,16 +86,6 @@ In-telligent system comes with geofence based communities to group audience. Thi
    pod "RealmSwift", "3.17.3"
    pod "SwiftyJSON", "~> 5.0.0"
    ```
-4. Versions of OpenAPI with Xcode compatability:
-    ```
-        For Xcode 13.2.1 -> OpenAPI version - v 1.0.3
-            Xcode 13.3.1 -> OpenAPI version - v 1.0.4
-            Xcode 13.4.1 -> OpenAPI version - v 1.0.5
-            Xcode 14.0.0 -> OpenAPI version - v 1.0.6
-            Xcode 14.0.1 -> OpenAPI version -  v 1.0.7
-            Xcode 14.1 -> OpenAPI version - v 1.0.8
-            Xcode 14.2 -> OpenAPI version - v 1.0.9
-    ```
 5. Remove the Excluded Architecture values from Build settings
    
 #### Install framework Manually <a id='setup-ios-manually'></a>
