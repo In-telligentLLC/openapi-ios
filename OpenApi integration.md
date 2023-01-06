@@ -77,6 +77,17 @@ In-telligent system comes with geofence based communities to group audience. Thi
    pod "RealmSwift", "3.17.3"
    pod "SwiftyJSON", "~> 5.0.0"
    ```
+4. Versions of OpenAPI with Xcode compatability:
+    ```
+        For Xcode 13.2.1 -> OpenAPI version - v 1.0.3
+            Xcode 13.3.1 -> OpenAPI version - v 1.0.4
+            Xcode 13.4.1 -> OpenAPI version - v 1.0.5
+            Xcode 14.0.0 -> OpenAPI version - v 1.0.6
+            Xcode 14.0.1 -> OpenAPI version -  v 1.0.7
+            Xcode 14.1 -> OpenAPI version - v 1.0.8
+            Xcode 14.2 -> OpenAPI version - v 1.0.9
+    ```
+5. Remove the Excluded Architecture values from Build settings
    
 #### Install framework Manually <a id='setup-ios-manually'></a>
 1. Open the XCode project in which you would like to integrate this framework.
