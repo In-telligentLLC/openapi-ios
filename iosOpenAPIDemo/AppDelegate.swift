@@ -112,6 +112,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         }
     }
     
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert,.sound,.badge])
+    }
     private func saveNotificationsToDatabase() {
         UNUserNotificationCenter.current().getDeliveredNotifications { (notifications) in
             if !notifications.isEmpty {

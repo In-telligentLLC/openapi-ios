@@ -13,8 +13,11 @@ PODS:
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.9.1)
   - OpenAPI (from `../int-openapi-ios/OpenAPI`)
+  - RealmSwift (= 3.17.3)
   - SVProgressHUD
+  - SwiftyJSON (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
@@ -36,6 +39,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: de16591c832942b94076374dcda136e0d2960c8a
+PODFILE CHECKSUM: 69be7b0cc98099e0f297848d267b8b47b10fc895
 
 COCOAPODS: 1.11.2
