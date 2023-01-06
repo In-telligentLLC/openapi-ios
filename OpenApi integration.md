@@ -1,4 +1,4 @@
-# OpenAPI integration  [![version](https://img.shields.io/badge/iOS_CocoaPods_version-1.0.1-green)](https://github.com/CocoaPods/Specs/blob/master/Specs/3/4/b/OpenAPI/1.0.1/OpenAPI.podspec.json)
+# OpenAPI integration  [![version](https://img.shields.io/badge/iOS_CocoaPods_version-1.0.9-green)](https://github.com/CocoaPods/Specs/blob/master/Specs/3/4/b/OpenAPI/1.0.9/OpenAPI.podspec.json)
 
 **Table of Contents**
 
