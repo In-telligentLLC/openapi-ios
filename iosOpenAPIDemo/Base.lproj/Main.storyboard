@@ -57,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2022" y="149"/>
+            <point key="canvasLocation" x="-3010" y="149"/>
         </scene>
         <!--Dash Board View Controller-->
         <scene sceneID="Skx-U7-HWz">
@@ -67,7 +67,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xeY-dF-hWD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xeY-dF-hWD">
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
@@ -86,6 +86,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YvD-Bo-bmP">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="K6d-GO-Nll"/>
                         <barButtonItem key="leftBarButtonItem" id="OLt-mv-cFZ">
                             <imageReference key="image" image="line.horizontal.3" catalog="system" symbolScale="default" variableValue="0.0"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -143,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whW-n9-PWb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2075.36231884058" y="409.82142857142856"/>
+            <point key="canvasLocation" x="-1988" y="149"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="IA3-KK-CZ3">
@@ -178,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Klj-8h-yOr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="207" y="394"/>
+            <point key="canvasLocation" x="138" y="343"/>
         </scene>
         <!--Search Communities View Controller-->
         <scene sceneID="ayH-zA-p3P">
@@ -212,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ojn-8O-HEH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2078" y="-522"/>
+            <point key="canvasLocation" x="1065" y="364"/>
         </scene>
         <!--Private Communities View Controller-->
         <scene sceneID="LH6-Ix-9B3">
@@ -246,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erk-Co-Ody" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3238" y="410"/>
+            <point key="canvasLocation" x="1935" y="364"/>
         </scene>
         <!--Alert List View Controller-->
         <scene sceneID="koP-AT-Cb1">
@@ -256,9 +257,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="j91-nj-1v1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="j91-nj-1v1">
                                 <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="q6t-IY-xCf" id="Nca-bW-6SQ"/>
                                     <outlet property="delegate" destination="q6t-IY-xCf" id="83X-Pe-pKH"/>
@@ -280,7 +282,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fua-nY-aS4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3238" y="-522"/>
+            <point key="canvasLocation" x="1935" y="-522"/>
+        </scene>
+        <!--Alert Detail View Controller-->
+        <scene sceneID="BTh-1l-JH9">
+            <objects>
+                <viewController storyboardIdentifier="AlertDetailViewController" id="Odd-8Z-07R" customClass="AlertDetailViewController" customModule="iosOpenAPIDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wos-Kl-1MZ" userLabel="ContentView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert title label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akL-J2-JVm">
+                                <rect key="frame" x="20" y="68" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-kS-ClT">
+                                <rect key="frame" x="20" y="118" width="374" height="680"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert time label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUs-0h-Ag8">
+                                <rect key="frame" x="20" y="818" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zGJ-yf-HhY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mPn-kS-ClT" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="361-WV-ZnS"/>
+                            <constraint firstItem="GUs-0h-Ag8" firstAttribute="top" secondItem="mPn-kS-ClT" secondAttribute="bottom" constant="20" id="4RW-BL-wcg"/>
+                            <constraint firstItem="akL-J2-JVm" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="NFa-M8-GjB"/>
+                            <constraint firstItem="akL-J2-JVm" firstAttribute="top" secondItem="zGJ-yf-HhY" secondAttribute="top" constant="20" id="OYX-Iy-OaL"/>
+                            <constraint firstItem="mPn-kS-ClT" firstAttribute="top" secondItem="akL-J2-JVm" secondAttribute="bottom" constant="20" id="blj-Cf-BM4"/>
+                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="GUs-0h-Ag8" secondAttribute="trailing" constant="20" id="dUX-Rd-Wd5"/>
+                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="akL-J2-JVm" secondAttribute="trailing" constant="20" id="m2v-aR-nLU"/>
+                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="bottom" secondItem="GUs-0h-Ag8" secondAttribute="bottom" constant="20" id="ny1-UN-OSy"/>
+                            <constraint firstItem="GUs-0h-Ag8" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="r3F-nh-AbA"/>
+                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="mPn-kS-ClT" secondAttribute="trailing" constant="20" id="sNe-De-MZm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertMessageView" destination="mPn-kS-ClT" id="VD8-hh-spO"/>
+                        <outlet property="alertTimeLabel" destination="GUs-0h-Ag8" id="Wrt-iL-0Zg"/>
+                        <outlet property="alertTitleLabel" destination="akL-J2-JVm" id="3S1-tW-28E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ysq-xv-SrO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2950.7246376811595" y="-522.32142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gAp-7c-EgS">
@@ -303,6 +358,9 @@
     </scenes>
     <resources>
         <image name="line.horizontal.3" catalog="system" width="128" height="65"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
