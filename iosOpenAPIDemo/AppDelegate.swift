@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.registerForRemoteNotifications()
         OpenAPI.configure(to: .uat, partnerToken: PartnerToken.getPartnerToken(), currentSandboxType: .dev)
+        print("current partner token = \(PartnerToken.getPartnerToken())")
         window = UIWindow(frame: UIScreen.main.bounds)
         return true
     }
@@ -105,14 +106,13 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        if response.notification.request.trigger is UNPushNotificationTrigger {
-            OpenAPI.relayPushKitNotification(dictionaryPayload: response.notification.request.content.userInfo)
-        } else {
-            NotificationCenter.default.post(name: Foundation.Notification.Name.receivedPushNotification, object: nil, userInfo: response.notification.request.content.userInfo)
-        }
+        OpenAPI.didReceiveResponseFromUserNotificationCenter(response)
+        OpenAPI.saveFromNotificationCenter([response.notification])
+        completionHandler()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        OpenAPI.saveFromNotificationCenter([notification])
         completionHandler([.alert,.sound,.badge])
     }
     private func saveNotificationsToDatabase() {

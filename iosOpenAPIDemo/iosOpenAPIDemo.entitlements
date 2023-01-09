@@ -6,8 +6,8 @@
 	<string>development</string>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.OpenAPI.OpenAPIFrameWork</string>
 		<string>group.com.intelligent.iosOpenAPIDemo</string>
+		<string>group.com.OpenAPI.OpenAPIFrameWork</string>
 	</array>
 </dict>
 </plist>

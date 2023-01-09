@@ -12,10 +12,11 @@ import CoreLocation
 class DashBoardViewModel : NSObject {
     
     var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-    //  var showSettingsAlert: ((_ type: String) -> Void)?
+    var subscribedCommunities : [INCommunity] = []
     
     override init() {
         super.init()
+        self.subscribedCommunities = INCommunityManager.shared.getSubscribedCommunities()
     }
     
     var areLocationPermissionsAllowed : Bool {
@@ -69,6 +70,3 @@ class DashBoardViewModel : NSObject {
         }
     }
 }
-
-
-

@@ -18,7 +18,6 @@ class DashBoardViewController: UIViewController {
     @IBOutlet var sideMenuButton: UIBarButtonItem!
     @IBOutlet var CommunityTableView: UITableView!
     var revealView: SWRevealViewController! = nil
-    var subscribedCommunities : [INCommunity] = []
     var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
     var viewModel = DashBoardViewModel()
     
@@ -26,7 +25,8 @@ class DashBoardViewController: UIViewController {
     //MARK: View life Cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.CommunityTableView.delegate = self
+        self.CommunityTableView.dataSource = self
         self.navigationController?.navigationBar.backgroundColor = .blue
         
         revealView = self.revealViewController()
@@ -41,15 +41,15 @@ class DashBoardViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(didSubscribeToCommunities(notification:)), name: .subscriptionProcessDidComplete, object: nil)
         
-        self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
         self.viewModel.checkForNotificationPermissions(viewController: self)
         INGeofencer.shared.didUpdateLocationStatus = { _ in
             self.viewModel.checkPermissions(called: "didUpdateLocationStatus" , viewController: self)
+            
         }
     }
     
     @objc func didSubscribeToCommunities(notification: Notification) {
-        self.subscribedCommunities = OpenAPI.getSubscribedCommunities()
+        
         DispatchQueue.main.async {
             self.CommunityTableView.reloadData()
         }
@@ -60,34 +60,40 @@ extension DashBoardViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if subscribedCommunities.count == 0 {
+        if viewModel.subscribedCommunities.count == 0 {
             CommunityTableView.setMessage("No communities found at this moment")
         } else {
             CommunityTableView.clearBackground()
         }
-        return self.subscribedCommunities.count
+        return self.viewModel.subscribedCommunities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = CommunityTableView.dequeueReusableCell(withIdentifier: "DashBoardCommunitiesTableViewCell", for: indexPath) as! DashBoardCommunitiesTableViewCell
-        let community = self.subscribedCommunities[indexPath.row]
+        let community = self.viewModel.subscribedCommunities[indexPath.row]
         cell.CommunityCellLabel.text = community.name
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.goToAlertList(with : self.viewModel.subscribedCommunities[indexPath.row])
     }
 }
 
 extension DashBoardViewController: INSubscriberManagerDelegate {
     
     func subscribedCommunities(_ subscribedCommunities: [INCommunity]) {
+        self.viewModel.subscribedCommunities = OpenAPI.getSubscribedCommunities()
         DispatchQueue.main.async {
             self.CommunityTableView.reloadData()
         }
     }
 }
-
-
-

@@ -22,6 +22,10 @@
 		4D5C4BBB29683BEC00B0C7A8 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C4BBA29683BEC00B0C7A8 /* NotificationService.swift */; };
 		4D5C4BBF29683BEC00B0C7A8 /* NotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4D5C4BB829683BEB00B0C7A8 /* NotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4D607B372940752900E20ACA /* PartnerTokenFIle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D607B362940752900E20ACA /* PartnerTokenFIle.swift */; };
+		4D764EE1296941C000F8B3AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D764EE0296941C000F8B3AD /* ViewController.swift */; };
+		4D764EE62969456B00F8B3AD /* AlertListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D764EE52969456B00F8B3AD /* AlertListViewModel.swift */; };
+		4D764EE9296998C300F8B3AD /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D764EE8296998C300F8B3AD /* Date.swift */; };
+		4D764EF22969DFE600F8B3AD /* StoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D764EF12969DFE600F8B3AD /* StoryBoard.swift */; };
 		4D76ED0F293DAD3F00467F33 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D76ED0E293DAD3F00467F33 /* SWRevealViewController.m */; };
 		4D76ED1E293DCEE000467F33 /* AlertListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76ED1D293DCEE000467F33 /* AlertListViewController.swift */; };
 		4D76ED20293DCF0F00467F33 /* PrivateCommunitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76ED1F293DCF0F00467F33 /* PrivateCommunitiesViewController.swift */; };
@@ -35,6 +39,8 @@
 		4D76ED37293DE81700467F33 /* AlertListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76ED35293DE81700467F33 /* AlertListTableViewCell.swift */; };
 		4D76ED38293DE81700467F33 /* AlertListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D76ED36293DE81700467F33 /* AlertListTableViewCell.xib */; };
 		4D76ED3B293DE87200467F33 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76ED3A293DE87200467F33 /* TestModel.swift */; };
+		4DA07E3D296B42A40050A2D7 /* AlertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07E3C296B42A40050A2D7 /* AlertDetailViewController.swift */; };
+		4DA07E3F296B464F0050A2D7 /* AlertDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07E3E296B464F0050A2D7 /* AlertDetailViewModel.swift */; };
 		91E462919434E11E82987E08 /* Pods_NotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48224C8B7FEA4A897E7170A /* Pods_NotificationServiceExtension.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +94,10 @@
 		4D607B402940C19F00E20ACA /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		4D607B422940C19F00E20ACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D607B4A2940C1A800E20ACA /* OpenAPINotificationExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenAPINotificationExtension.entitlements; sourceTree = "<group>"; };
+		4D764EE0296941C000F8B3AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4D764EE52969456B00F8B3AD /* AlertListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertListViewModel.swift; sourceTree = "<group>"; };
+		4D764EE8296998C300F8B3AD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		4D764EF12969DFE600F8B3AD /* StoryBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBoard.swift; sourceTree = "<group>"; };
 		4D76ED0C293DAD3400467F33 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		4D76ED0D293DAD3E00467F33 /* iosOpenAPIDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iosOpenAPIDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D76ED0E293DAD3F00467F33 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -103,6 +113,8 @@
 		4D76ED35293DE81700467F33 /* AlertListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertListTableViewCell.swift; sourceTree = "<group>"; };
 		4D76ED36293DE81700467F33 /* AlertListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertListTableViewCell.xib; sourceTree = "<group>"; };
 		4D76ED3A293DE87200467F33 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		4DA07E3C296B42A40050A2D7 /* AlertDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDetailViewController.swift; sourceTree = "<group>"; };
+		4DA07E3E296B464F0050A2D7 /* AlertDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDetailViewModel.swift; sourceTree = "<group>"; };
 		A30DE8C9446F9DCC4C5C5C4A /* Pods-NotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-NotificationServiceExtension/Pods-NotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		A48224C8B7FEA4A897E7170A /* Pods_NotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E58D2A3078F5140CAE9CEC /* Pods_iosOpenAPIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosOpenAPIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,7 +166,7 @@
 		4D2B64102938A948006DB4D1 /* iosOpenAPIDemo */ = {
 			isa = PBXGroup;
 			children = (
-				4D607B3829407A1700E20ACA /* Helpers */,
+				4D764EDC29693C6200F8B3AD /* Utilities */,
 				4D2B64252938AA0D006DB4D1 /* Modules */,
 				4D2B64112938A948006DB4D1 /* AppDelegate.swift */,
 				4D2B64132938A948006DB4D1 /* SceneDelegate.swift */,
@@ -172,6 +184,7 @@
 		4D2B64252938AA0D006DB4D1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4D764EF3296B3CEA00F8B3AD /* AlertDetailScreen */,
 				4D2B642A2938AA71006DB4D1 /* SplashScreen */,
 				4D76ED11293DCD0F00467F33 /* LoginScreen */,
 				4D2B64262938AA1C006DB4D1 /* DashBoardScreen */,
@@ -265,6 +278,7 @@
 		4D607B3829407A1700E20ACA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				4D764EF12969DFE600F8B3AD /* StoryBoard.swift */,
 				4D5B08CF295182EF00B3D324 /* DashBoardScreenHelper */,
 				4D607B352940750600E20ACA /* PartnerTokenInfo */,
 			);
@@ -279,6 +293,49 @@
 				4D607B422940C19F00E20ACA /* Info.plist */,
 			);
 			path = OpenAPINotificationExtension;
+			sourceTree = "<group>";
+		};
+		4D764EDC29693C6200F8B3AD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4D764EDD29693C9F00F8B3AD /* Extensions */,
+				4D607B3829407A1700E20ACA /* Helpers */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4D764EDD29693C9F00F8B3AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4D764EE7296998AD00F8B3AD /* Foundation */,
+				4D764EE0296941C000F8B3AD /* ViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4D764EE42969452D00F8B3AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4D764EE52969456B00F8B3AD /* AlertListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4D764EE7296998AD00F8B3AD /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				4D764EE8296998C300F8B3AD /* Date.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		4D764EF3296B3CEA00F8B3AD /* AlertDetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4DA07E3C296B42A40050A2D7 /* AlertDetailViewController.swift */,
+				4DA07E3E296B464F0050A2D7 /* AlertDetailViewModel.swift */,
+			);
+			path = AlertDetailScreen;
 			sourceTree = "<group>";
 		};
 		4D76ED11293DCD0F00467F33 /* LoginScreen */ = {
@@ -320,6 +377,7 @@
 		4D76ED16293DCE0200467F33 /* AlertsListScreen */ = {
 			isa = PBXGroup;
 			children = (
+				4D764EE42969452D00F8B3AD /* ViewModel */,
 				4D76ED3F293DEB8E00467F33 /* Model */,
 				4D76ED34293DE7FB00467F33 /* View */,
 				4D76ED17293DCE7B00467F33 /* Controller */,
@@ -627,21 +685,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D5B08D12951846B00B3D324 /* DashBoardTableViewExtension.swift in Sources */,
+				4D764EE1296941C000F8B3AD /* ViewController.swift in Sources */,
 				4D2B64292938AA50006DB4D1 /* DashBoardViewController.swift in Sources */,
 				4D607B372940752900E20ACA /* PartnerTokenFIle.swift in Sources */,
+				4DA07E3F296B464F0050A2D7 /* AlertDetailViewModel.swift in Sources */,
 				4D76ED32293DE7EA00467F33 /* PrivateCommunityTableViewCell.swift in Sources */,
 				4D76ED20293DCF0F00467F33 /* PrivateCommunitiesViewController.swift in Sources */,
 				4D76ED3B293DE87200467F33 /* TestModel.swift in Sources */,
 				4D76ED22293DCF2600467F33 /* SearchCommunitiesViewController.swift in Sources */,
+				4D764EF22969DFE600F8B3AD /* StoryBoard.swift in Sources */,
 				4D2B64122938A948006DB4D1 /* AppDelegate.swift in Sources */,
 				4D4B7860294886D40041B424 /* DashBoardViewModel.swift in Sources */,
 				4D76ED2B293DD70900467F33 /* CommunityCell.swift in Sources */,
 				4D2B64142938A948006DB4D1 /* SceneDelegate.swift in Sources */,
 				4D2B642D2938AAAC006DB4D1 /* SplashViewController.swift in Sources */,
+				4DA07E3D296B42A40050A2D7 /* AlertDetailViewController.swift in Sources */,
 				4D76ED0F293DAD3F00467F33 /* SWRevealViewController.m in Sources */,
 				4D4B7865294886F10041B424 /* DashBoardCommunitiesTableViewCell.swift in Sources */,
 				4D76ED25293DCFB400467F33 /* SideMenuViewController.swift in Sources */,
 				4D76ED37293DE81700467F33 /* AlertListTableViewCell.swift in Sources */,
+				4D764EE62969456B00F8B3AD /* AlertListViewModel.swift in Sources */,
+				4D764EE9296998C300F8B3AD /* Date.swift in Sources */,
 				4D76ED27293DCFD900467F33 /* LoginViewController.swift in Sources */,
 				4D76ED1E293DCEE000467F33 /* AlertListViewController.swift in Sources */,
 			);
