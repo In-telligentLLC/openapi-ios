@@ -25,5 +25,12 @@ class AlertDetailViewController: UIViewController {
         self.alertMessageView.text = messageTrimmedString
         self.alertMessageView.isUserInteractionEnabled = false
         alertTimeLabel.text = notification.formattedDateString
+        self.markOpened(with: notification)
+    }
+    
+    func markOpened(with notification : INNotification) {
+        API.markOpened(notification, success: {
+        }, failure: { _,_  in
+        })
     }
 }
