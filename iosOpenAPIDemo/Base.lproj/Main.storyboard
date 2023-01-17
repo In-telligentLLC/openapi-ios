@@ -213,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ojn-8O-HEH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="364"/>
+            <point key="canvasLocation" x="929" y="343"/>
         </scene>
         <!--Private Communities View Controller-->
         <scene sceneID="LH6-Ix-9B3">
@@ -282,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fua-nY-aS4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935" y="-522"/>
+            <point key="canvasLocation" x="1717" y="-522"/>
         </scene>
         <!--Alert Detail View Controller-->
         <scene sceneID="BTh-1l-JH9">
@@ -292,22 +292,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert title label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akL-J2-JVm">
-                                <rect key="frame" x="20" y="68" width="374" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert Type Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akL-J2-JVm">
+                                <rect key="frame" x="20" y="127.5" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-kS-ClT">
-                                <rect key="frame" x="20" y="118" width="374" height="680"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Alert Message Text View" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-kS-ClT">
+                                <rect key="frame" x="20" y="240.5" width="374" height="601.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert time label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUs-0h-Ag8">
-                                <rect key="frame" x="20" y="818" width="374" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert date label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUs-0h-Ag8">
+                                <rect key="frame" x="20" y="68" width="374" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert Title Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Se-Sb-Vjl">
+                                <rect key="frame" x="20" y="184" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -315,27 +321,31 @@
                         <viewLayoutGuide key="safeArea" id="zGJ-yf-HhY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mPn-kS-ClT" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="361-WV-ZnS"/>
-                            <constraint firstItem="GUs-0h-Ag8" firstAttribute="top" secondItem="mPn-kS-ClT" secondAttribute="bottom" constant="20" id="4RW-BL-wcg"/>
-                            <constraint firstItem="akL-J2-JVm" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="NFa-M8-GjB"/>
-                            <constraint firstItem="akL-J2-JVm" firstAttribute="top" secondItem="zGJ-yf-HhY" secondAttribute="top" constant="20" id="OYX-Iy-OaL"/>
-                            <constraint firstItem="mPn-kS-ClT" firstAttribute="top" secondItem="akL-J2-JVm" secondAttribute="bottom" constant="20" id="blj-Cf-BM4"/>
-                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="GUs-0h-Ag8" secondAttribute="trailing" constant="20" id="dUX-Rd-Wd5"/>
-                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="akL-J2-JVm" secondAttribute="trailing" constant="20" id="m2v-aR-nLU"/>
-                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="bottom" secondItem="GUs-0h-Ag8" secondAttribute="bottom" constant="20" id="ny1-UN-OSy"/>
-                            <constraint firstItem="GUs-0h-Ag8" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="r3F-nh-AbA"/>
-                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="mPn-kS-ClT" secondAttribute="trailing" constant="20" id="sNe-De-MZm"/>
+                            <constraint firstItem="akL-J2-JVm" firstAttribute="top" secondItem="GUs-0h-Ag8" secondAttribute="bottom" constant="40" id="5xK-z1-DCs"/>
+                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="1Se-Sb-Vjl" secondAttribute="trailing" constant="20" id="FHp-lu-MiY"/>
+                            <constraint firstItem="akL-J2-JVm" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="K5Y-Mg-LmG"/>
+                            <constraint firstItem="mPn-kS-ClT" firstAttribute="top" secondItem="1Se-Sb-Vjl" secondAttribute="bottom" constant="30" id="KyL-vv-c8L"/>
+                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="akL-J2-JVm" secondAttribute="trailing" constant="20" id="P9c-uz-JKS"/>
+                            <constraint firstItem="GUs-0h-Ag8" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="W7y-Li-CDt"/>
+                            <constraint firstItem="1Se-Sb-Vjl" firstAttribute="top" secondItem="akL-J2-JVm" secondAttribute="bottom" constant="30" id="XQ5-Hg-1ip"/>
+                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="bottom" secondItem="mPn-kS-ClT" secondAttribute="bottom" constant="20" id="nzn-gb-DRv"/>
+                            <constraint firstItem="1Se-Sb-Vjl" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="pu4-Kg-JPP"/>
+                            <constraint firstItem="mPn-kS-ClT" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="qRM-La-3Dv"/>
+                            <constraint firstItem="GUs-0h-Ag8" firstAttribute="top" secondItem="zGJ-yf-HhY" secondAttribute="top" constant="20" id="ra0-gD-cTP"/>
+                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="mPn-kS-ClT" secondAttribute="trailing" constant="20" id="sz9-Hu-kXr"/>
+                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="GUs-0h-Ag8" secondAttribute="trailing" constant="20" id="uUs-4p-9gm"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="alertMessageView" destination="mPn-kS-ClT" id="VD8-hh-spO"/>
                         <outlet property="alertTimeLabel" destination="GUs-0h-Ag8" id="Wrt-iL-0Zg"/>
-                        <outlet property="alertTitleLabel" destination="akL-J2-JVm" id="3S1-tW-28E"/>
+                        <outlet property="alertTitleLabel" destination="1Se-Sb-Vjl" id="Hgw-hQ-ln5"/>
+                        <outlet property="alertTypeLabel" destination="akL-J2-JVm" id="yEc-0T-eEc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ysq-xv-SrO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2950.7246376811595" y="-522.32142857142856"/>
+            <point key="canvasLocation" x="2565" y="-522"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gAp-7c-EgS">

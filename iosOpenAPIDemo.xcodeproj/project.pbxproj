@@ -267,6 +267,13 @@
 			path = NotificationServiceExtension;
 			sourceTree = "<group>";
 		};
+		4D5D81042970121B00AC5FA2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4D607B352940750600E20ACA /* PartnerTokenInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +364,7 @@
 		4D76ED14293DCD5000467F33 /* SearchCommunitiesScreen */ = {
 			isa = PBXGroup;
 			children = (
+				4D5D81042970121B00AC5FA2 /* ViewModel */,
 				4D76ED3D293DEB5E00467F33 /* Model */,
 				4D76ED28293DD6E100467F33 /* View */,
 				4D76ED19293DCE9D00467F33 /* Controller */,

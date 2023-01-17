@@ -12,7 +12,6 @@ import OpenAPI
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.registerForRemoteNotifications()
@@ -103,12 +102,28 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         OpenAPI.relayPushKitNotification(dictionaryPayload: userInfo)
+        self.goToAlertDetails(dictionary:userInfo)
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         OpenAPI.didReceiveResponseFromUserNotificationCenter(response)
         OpenAPI.saveFromNotificationCenter([response.notification])
+        self.goToAlertDetails(dictionary: response.notification.request.content.userInfo)
         completionHandler()
+    }
+    
+    func goToAlertDetails(dictionary: [AnyHashable: Any]) {
+        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        if let dashBoardController = (window?.rootViewController?.children.last as? UINavigationController)?.topViewController as? DashBoardViewController {
+            dashBoardController.isNotificationReceived = true
+            dashBoardController.viewModel.fetchNotifications()
+            dashBoardController.viewWillAppear(true)
+            
+           let notification = INNotification(dictionary: dictionary)
+            guard let notficationID = notification?.buildingId else {return}
+            let community = INCommunityManager.shared.getCommunity(by: notficationID)
+            dashBoardController.gotoAlertDetail(with: community, and: notification)
+        }
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {

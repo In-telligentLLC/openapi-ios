@@ -14,6 +14,7 @@ class AlertDetailViewController: UIViewController {
     @IBOutlet weak var alertTitleLabel: UILabel!
     @IBOutlet weak var alertTimeLabel: UILabel!
     @IBOutlet weak var alertMessageView : UITextView!
+    @IBOutlet var alertTypeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class AlertDetailViewController: UIViewController {
         let titleTrimmedString = notification.title.trimmingCharacters(in: .whitespacesAndNewlines)
         self.alertTitleLabel.text = titleTrimmedString
         let messageTrimmedString = notification.message.trimmingCharacters(in: .whitespacesAndNewlines)
+        self.alertTypeLabel.text = notification._type
         self.alertMessageView.text = messageTrimmedString
         self.alertMessageView.isUserInteractionEnabled = false
         alertTimeLabel.text = notification.formattedDateString

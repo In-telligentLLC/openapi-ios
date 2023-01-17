@@ -29,7 +29,6 @@ extension AlertListViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.viewModel.notifications.count == 0 {
-          //  self.AlertListTableView.setEmptyView(with: "No alerts at this moment", shouldCenter: true)
             self.AlertListTableView.setMessage("No alerts at this moment")
         }
         return self.viewModel.notifications.count
