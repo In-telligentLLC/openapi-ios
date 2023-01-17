@@ -13,6 +13,8 @@ class DashBoardViewModel : NSObject {
     
     var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
     var subscribedCommunities : [INCommunity] = []
+    var allNotifications: [INNotification] = []
+    var alertsFetchCompletion: (() -> Void)?
     
     override init() {
         super.init()
@@ -68,5 +70,10 @@ class DashBoardViewModel : NSObject {
         if !INPushManager.shared.havePushTokens() {
             viewController.showSettingsAlert(type: "Notifications")
         }
+    }
+    
+    func fetchNotifications() {
+        self.allNotifications = INNotification.getSavedNotificaitons()
+        self.alertsFetchCompletion?()
     }
 }

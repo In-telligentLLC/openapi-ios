@@ -20,7 +20,8 @@ class DashBoardViewController: UIViewController {
     var revealView: SWRevealViewController! = nil
     var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
     var viewModel = DashBoardViewModel()
-    
+    var notification: INNotification?
+    var isNotificationReceived = false
     
     //MARK: View life Cycle methods
     override func viewDidLoad() {
@@ -44,12 +45,10 @@ class DashBoardViewController: UIViewController {
         self.viewModel.checkForNotificationPermissions(viewController: self)
         INGeofencer.shared.didUpdateLocationStatus = { _ in
             self.viewModel.checkPermissions(called: "didUpdateLocationStatus" , viewController: self)
-            
         }
     }
     
     @objc func didSubscribeToCommunities(notification: Notification) {
-        
         DispatchQueue.main.async {
             self.CommunityTableView.reloadData()
         }
