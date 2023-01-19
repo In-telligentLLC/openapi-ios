@@ -28,14 +28,14 @@ class DashBoardViewController: UIViewController {
         super.viewDidLoad()
         self.CommunityTableView.delegate = self
         self.CommunityTableView.dataSource = self
-        self.navigationController?.navigationBar.backgroundColor = .blue
-        
+
         revealView = self.revealViewController()
         sideMenuButton.target = revealView
         sideMenuButton.action = #selector(revealView?.revealToggle(_:))
-        
-        self.title = "Communities List"
-        
+        sideMenuButton.tintColor = .white
+        view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+       
         OpenAPI.start(self)
         
         self.CommunityTableView.register(UINib(nibName: "DashBoardCommunitiesTableViewCell", bundle: .main), forCellReuseIdentifier: "DashBoardCommunitiesTableViewCell")
@@ -48,11 +48,21 @@ class DashBoardViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "Communities List"
+        self.navigationController?.navigationItem.titleView?.tintColor = .white
+        
+    }
+    
+    
     @objc func didSubscribeToCommunities(notification: Notification) {
         DispatchQueue.main.async {
             self.CommunityTableView.reloadData()
         }
     }
+    
+    
 }
 //MARK: tableView Delegate,DataSource Methods
 extension DashBoardViewController : UITableViewDelegate, UITableViewDataSource {

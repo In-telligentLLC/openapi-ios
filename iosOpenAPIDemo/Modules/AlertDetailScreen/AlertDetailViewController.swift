@@ -8,7 +8,7 @@
 import UIKit
 import OpenAPI
 
-class AlertDetailViewController: UIViewController {
+class AlertDetailViewController: UIViewController, UITextViewDelegate {
     
     var viewModel = AlertDetailViewModel()
     @IBOutlet weak var alertTitleLabel: UILabel!
@@ -18,16 +18,23 @@ class AlertDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Alert Details"
+        
+       
+        self.alertMessageView.delegate = self
         guard let notification = self.viewModel.notification else { return }
         let titleTrimmedString = notification.title.trimmingCharacters(in: .whitespacesAndNewlines)
         self.alertTitleLabel.text = titleTrimmedString
         let messageTrimmedString = notification.message.trimmingCharacters(in: .whitespacesAndNewlines)
         self.alertTypeLabel.text = notification._type
         self.alertMessageView.text = messageTrimmedString
-        self.alertMessageView.isUserInteractionEnabled = false
         alertTimeLabel.text = notification.formattedDateString
         self.markOpened(with: notification)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = "Alert details"
+        self.navigationController?.navigationBar.backItem?.title = "back"
+        self.navigationController?.title = "back"
     }
     
     func markOpened(with notification : INNotification) {
