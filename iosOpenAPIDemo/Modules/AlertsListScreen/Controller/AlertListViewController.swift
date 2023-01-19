@@ -20,7 +20,7 @@ class AlertListViewController: UIViewController {
         self.AlertListTableView.dataSource = self
         self.AlertListTableView.register(UINib(nibName: "AlertListTableViewCell", bundle: .main) , forCellReuseIdentifier: "AlertListTableViewCell")
         self.title = "Alert List"
-        self.navigationItem.backButtonTitle = "Back"
+        
         self.viewModel.updateNotificationsByCommunity()
     }
 }
