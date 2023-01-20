@@ -19,13 +19,12 @@ class AlertDetailViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
         self.alertMessageView.delegate = self
         guard let notification = self.viewModel.notification else { return }
         let titleTrimmedString = notification.title.trimmingCharacters(in: .whitespacesAndNewlines)
         self.alertTitleLabel.text = titleTrimmedString
         let messageTrimmedString = notification.message.trimmingCharacters(in: .whitespacesAndNewlines)
-        self.alertTypeLabel.text = notification._type
+        self.alertTypeLabel.text = "Alert type: \(notification._type)"
         self.alertMessageView.text = messageTrimmedString
         alertTimeLabel.text = notification.formattedDateString
         self.markOpened(with: notification)
@@ -33,8 +32,7 @@ class AlertDetailViewController: UIViewController, UITextViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.title = "Alert details"
-        self.navigationController?.navigationBar.backItem?.title = "back"
-        self.navigationController?.title = "back"
+        self.navigationController?.navigationBar.topItem?.title = " "
     }
     
     func markOpened(with notification : INNotification) {

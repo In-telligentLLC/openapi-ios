@@ -38,6 +38,6 @@ class AlertListViewModel: NSObject {
     }
     
     func updateNotificationsByCommunity() {
-        self.notifications = OpenAPI.getNotificationsByBuilding(self.community?.id ?? 0)
+        self.notifications = OpenAPI.getNotificationsByBuilding(self.community?.id ?? 0).reversed()
     }
 }

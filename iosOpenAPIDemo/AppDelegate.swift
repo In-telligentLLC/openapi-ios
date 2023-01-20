@@ -116,10 +116,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
         if let dashBoardController = (window?.rootViewController?.children.last as? UINavigationController)?.topViewController as? DashBoardViewController {
             dashBoardController.isNotificationReceived = true
+            dashBoardController.isFromDashboard = true
             dashBoardController.viewModel.fetchNotifications()
             dashBoardController.viewWillAppear(true)
-            
-           let notification = INNotification(dictionary: dictionary)
+            let notification = INNotification(dictionary: dictionary)
             guard let notficationID = notification?.buildingId else {return}
             let community = INCommunityManager.shared.getCommunity(by: notficationID)
             dashBoardController.gotoAlertDetail(with: community, and: notification)

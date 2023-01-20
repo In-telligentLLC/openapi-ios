@@ -16,5 +16,4 @@ class searchCommunitiesViewModel : NSObject {
         super.init()
         self.searchCommunities = INCommunityManager.shared.getAllCommunities()
     }
-
 }
