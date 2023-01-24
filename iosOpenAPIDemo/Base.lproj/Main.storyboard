@@ -285,7 +285,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Alert Message Text View" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-kS-ClT">
-                                <rect key="frame" x="20" y="153.5" width="374" height="668.5"/>
+                                <rect key="frame" x="20" y="153.5" width="374" height="558.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -317,7 +317,7 @@
                             <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="akL-J2-JVm" secondAttribute="trailing" constant="20" id="P9c-uz-JKS"/>
                             <constraint firstItem="GUs-0h-Ag8" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="W7y-Li-CDt"/>
                             <constraint firstItem="1Se-Sb-Vjl" firstAttribute="top" secondItem="akL-J2-JVm" secondAttribute="bottom" constant="10" id="XQ5-Hg-1ip"/>
-                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="bottom" secondItem="mPn-kS-ClT" secondAttribute="bottom" constant="40" id="nzn-gb-DRv"/>
+                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="bottom" secondItem="mPn-kS-ClT" secondAttribute="bottom" constant="150" id="nzn-gb-DRv"/>
                             <constraint firstItem="1Se-Sb-Vjl" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="pu4-Kg-JPP"/>
                             <constraint firstItem="mPn-kS-ClT" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="qRM-La-3Dv"/>
                             <constraint firstItem="GUs-0h-Ag8" firstAttribute="top" secondItem="zGJ-yf-HhY" secondAttribute="top" constant="20" id="ra0-gD-cTP"/>
