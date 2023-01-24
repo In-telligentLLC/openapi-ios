@@ -14,7 +14,6 @@ class searchCommunitiesViewModel : NSObject {
     
     override init() {
         super.init()
-        self.searchCommunities = INCommunityManager.shared.getAllCommunities()
+        self.searchCommunities = OpenAPI.getAllCommunities()
     }
-
 }

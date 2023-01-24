@@ -19,6 +19,15 @@
 		4D4B7865294886F10041B424 /* DashBoardCommunitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B7863294886F10041B424 /* DashBoardCommunitiesTableViewCell.swift */; };
 		4D4B7866294886F10041B424 /* DashBoardCommunitiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4B7864294886F10041B424 /* DashBoardCommunitiesTableViewCell.xib */; };
 		4D5B08D12951846B00B3D324 /* DashBoardTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B08D02951846B00B3D324 /* DashBoardTableViewExtension.swift */; };
+		4D5B5C57297E92A20005CD48 /* voip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B5C4E297E92A20005CD48 /* voip.mp3 */; };
+		4D5B5C58297E92A20005CD48 /* ping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B5C4F297E92A20005CD48 /* ping.mp3 */; };
+		4D5B5C59297E92A20005CD48 /* lightning.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B5C50297E92A20005CD48 /* lightning.mp3 */; };
+		4D5B5C5A297E92A20005CD48 /* urgent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B5C51297E92A20005CD48 /* urgent.mp3 */; };
+		4D5B5C5B297E92A20005CD48 /* weather.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B5C52297E92A20005CD48 /* weather.mp3 */; };
+		4D5B5C5C297E92A20005CD48 /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B5C53297E92A20005CD48 /* silence.mp3 */; };
+		4D5B5C5D297E92A20005CD48 /* critical.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B5C54297E92A20005CD48 /* critical.mp3 */; };
+		4D5B5C5E297E92A20005CD48 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B5C55297E92A20005CD48 /* alarm.mp3 */; };
+		4D5B5C5F297E92A20005CD48 /* emergency.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B5C56297E92A20005CD48 /* emergency.mp3 */; };
 		4D5C4BBB29683BEC00B0C7A8 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C4BBA29683BEC00B0C7A8 /* NotificationService.swift */; };
 		4D5C4BBF29683BEC00B0C7A8 /* NotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4D5C4BB829683BEB00B0C7A8 /* NotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4D5FCC3E2977522C00B2104E /* SerachCommunitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5FCC3D2977522C00B2104E /* SerachCommunitiesViewModel.swift */; };
@@ -84,6 +93,15 @@
 		4D4B7863294886F10041B424 /* DashBoardCommunitiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashBoardCommunitiesTableViewCell.swift; sourceTree = "<group>"; };
 		4D4B7864294886F10041B424 /* DashBoardCommunitiesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashBoardCommunitiesTableViewCell.xib; sourceTree = "<group>"; };
 		4D5B08D02951846B00B3D324 /* DashBoardTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardTableViewExtension.swift; sourceTree = "<group>"; };
+		4D5B5C4E297E92A20005CD48 /* voip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = voip.mp3; path = AudioFiles/voip.mp3; sourceTree = "<group>"; };
+		4D5B5C4F297E92A20005CD48 /* ping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ping.mp3; path = AudioFiles/ping.mp3; sourceTree = "<group>"; };
+		4D5B5C50297E92A20005CD48 /* lightning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = lightning.mp3; path = AudioFiles/lightning.mp3; sourceTree = "<group>"; };
+		4D5B5C51297E92A20005CD48 /* urgent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = urgent.mp3; path = AudioFiles/urgent.mp3; sourceTree = "<group>"; };
+		4D5B5C52297E92A20005CD48 /* weather.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = weather.mp3; path = AudioFiles/weather.mp3; sourceTree = "<group>"; };
+		4D5B5C53297E92A20005CD48 /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = silence.mp3; path = AudioFiles/silence.mp3; sourceTree = "<group>"; };
+		4D5B5C54297E92A20005CD48 /* critical.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = critical.mp3; path = AudioFiles/critical.mp3; sourceTree = "<group>"; };
+		4D5B5C55297E92A20005CD48 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alarm.mp3; path = AudioFiles/alarm.mp3; sourceTree = "<group>"; };
+		4D5B5C56297E92A20005CD48 /* emergency.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = emergency.mp3; path = AudioFiles/emergency.mp3; sourceTree = "<group>"; };
 		4D5C4BB829683BEB00B0C7A8 /* NotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D5C4BBA29683BEC00B0C7A8 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		4D5C4BBC29683BEC00B0C7A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -162,6 +180,15 @@
 		4D2B64102938A948006DB4D1 /* iosOpenAPIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4D5B5C55297E92A20005CD48 /* alarm.mp3 */,
+				4D5B5C54297E92A20005CD48 /* critical.mp3 */,
+				4D5B5C56297E92A20005CD48 /* emergency.mp3 */,
+				4D5B5C50297E92A20005CD48 /* lightning.mp3 */,
+				4D5B5C4F297E92A20005CD48 /* ping.mp3 */,
+				4D5B5C53297E92A20005CD48 /* silence.mp3 */,
+				4D5B5C51297E92A20005CD48 /* urgent.mp3 */,
+				4D5B5C4E297E92A20005CD48 /* voip.mp3 */,
+				4D5B5C52297E92A20005CD48 /* weather.mp3 */,
 				4D764EDC29693C6200F8B3AD /* Utilities */,
 				4D2B64252938AA0D006DB4D1 /* Modules */,
 				4D2B64112938A948006DB4D1 /* AppDelegate.swift */,
@@ -566,11 +593,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D5B5C5C297E92A20005CD48 /* silence.mp3 in Resources */,
+				4D5B5C5D297E92A20005CD48 /* critical.mp3 in Resources */,
 				4D2B641E2938A94E006DB4D1 /* LaunchScreen.storyboard in Resources */,
+				4D5B5C5A297E92A20005CD48 /* urgent.mp3 in Resources */,
+				4D5B5C59297E92A20005CD48 /* lightning.mp3 in Resources */,
 				4D2B641B2938A94E006DB4D1 /* Assets.xcassets in Resources */,
 				4D76ED38293DE81700467F33 /* AlertListTableViewCell.xib in Resources */,
+				4D5B5C5F297E92A20005CD48 /* emergency.mp3 in Resources */,
 				4D2B64192938A949006DB4D1 /* Main.storyboard in Resources */,
+				4D5B5C58297E92A20005CD48 /* ping.mp3 in Resources */,
+				4D5B5C57297E92A20005CD48 /* voip.mp3 in Resources */,
 				4D4B7866294886F10041B424 /* DashBoardCommunitiesTableViewCell.xib in Resources */,
+				4D5B5C5B297E92A20005CD48 /* weather.mp3 in Resources */,
+				4D5B5C5E297E92A20005CD48 /* alarm.mp3 in Resources */,
 				4D76ED2C293DD70900467F33 /* CommunityCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -866,7 +902,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.intelligent.OpenAPIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -876,7 +912,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "iosOpenAPIDemo/iosOpenAPIDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -909,7 +945,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.intelligent.OpenAPIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -918,7 +954,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "iosOpenAPIDemo/iosOpenAPIDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

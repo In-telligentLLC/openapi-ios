@@ -22,20 +22,21 @@ class DashBoardViewController: UIViewController {
     var viewModel = DashBoardViewModel()
     var notification: INNotification?
     var isNotificationReceived = false
+    var isFromDashboard = false
     
     //MARK: View life Cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.CommunityTableView.delegate = self
         self.CommunityTableView.dataSource = self
-
+        
         revealView = self.revealViewController()
         sideMenuButton.target = revealView
         sideMenuButton.action = #selector(revealView?.revealToggle(_:))
         sideMenuButton.tintColor = .white
         view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-       
+        
         OpenAPI.start(self)
         
         self.CommunityTableView.register(UINib(nibName: "DashBoardCommunitiesTableViewCell", bundle: .main), forCellReuseIdentifier: "DashBoardCommunitiesTableViewCell")
@@ -52,17 +53,20 @@ class DashBoardViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationItem.title = "Communities List"
         self.navigationController?.navigationItem.titleView?.tintColor = .white
-        
+        if isFromDashboard {
+            self.revealViewController().revealToggle(animated: true)
+        }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        isFromDashboard = false
+    }
     
     @objc func didSubscribeToCommunities(notification: Notification) {
         DispatchQueue.main.async {
             self.CommunityTableView.reloadData()
         }
     }
-    
-    
 }
 //MARK: tableView Delegate,DataSource Methods
 extension DashBoardViewController : UITableViewDelegate, UITableViewDataSource {

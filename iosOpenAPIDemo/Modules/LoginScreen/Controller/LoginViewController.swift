@@ -32,7 +32,7 @@ class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
                     DispatchQueue.main.async { SVProgressHUD.dismiss() }
                 }
             } else {
-                self.showAlertWithMessage("Fill required fields or something went wrong, please try again.")
+                self.showAlertWithMessage("Something went wrong, please try again.")
             }
         }
     }

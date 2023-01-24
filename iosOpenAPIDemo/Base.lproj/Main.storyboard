@@ -77,7 +77,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D5Y-ad-IBb"/>
-                        <color key="backgroundColor" red="0.21568627450980393" green="0.0" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xeY-dF-hWD" firstAttribute="top" secondItem="D5Y-ad-IBb" secondAttribute="top" id="1lf-G9-vNy"/>
                             <constraint firstItem="D5Y-ad-IBb" firstAttribute="bottom" secondItem="xeY-dF-hWD" secondAttribute="bottom" id="3z0-YX-jyI"/>
@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fXE-lT-VFW">
-                                <rect key="frame" x="0.0" y="93" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="93" width="414" height="803"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="p3X-sP-SLK" id="Gfh-qW-dDL"/>
@@ -167,7 +167,7 @@
                         <color key="backgroundColor" red="0.2156862745" green="0.0" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="M6g-YQ-I7h" firstAttribute="trailing" secondItem="fXE-lT-VFW" secondAttribute="trailing" id="4Al-M7-qZJ"/>
-                            <constraint firstItem="M6g-YQ-I7h" firstAttribute="bottom" secondItem="fXE-lT-VFW" secondAttribute="bottom" id="5Kv-de-EP1"/>
+                            <constraint firstAttribute="bottom" secondItem="fXE-lT-VFW" secondAttribute="bottom" id="5Kv-de-EP1"/>
                             <constraint firstItem="fXE-lT-VFW" firstAttribute="top" secondItem="M6g-YQ-I7h" secondAttribute="top" constant="45" id="Tbf-AO-rst"/>
                             <constraint firstItem="fXE-lT-VFW" firstAttribute="leading" secondItem="M6g-YQ-I7h" secondAttribute="leading" id="vAu-U6-tba"/>
                         </constraints>
@@ -179,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Klj-8h-yOr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="343"/>
+            <point key="canvasLocation" x="137.68115942028987" y="342.85714285714283"/>
         </scene>
         <!--Search Communities View Controller-->
         <scene sceneID="ayH-zA-p3P">
@@ -217,7 +217,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GGf-L9-NVr"/>
-                        <color key="backgroundColor" red="0.2156862745" green="0.0" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GGf-L9-NVr" firstAttribute="trailing" secondItem="hub-tT-8hZ" secondAttribute="trailing" id="8Ia-P4-ZIy"/>
                             <constraint firstItem="hub-tT-8hZ" firstAttribute="top" secondItem="GGf-L9-NVr" secondAttribute="top" id="Ejg-i2-gEy"/>
@@ -253,7 +253,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6W5-DJ-SWa"/>
-                        <color key="backgroundColor" red="0.21568627450980393" green="0.0" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6W5-DJ-SWa" firstAttribute="trailing" secondItem="j91-nj-1v1" secondAttribute="trailing" id="F5j-Al-eNj"/>
                             <constraint firstItem="j91-nj-1v1" firstAttribute="leading" secondItem="6W5-DJ-SWa" secondAttribute="leading" id="RW4-VF-or7"/>
@@ -273,49 +273,50 @@
         <scene sceneID="BTh-1l-JH9">
             <objects>
                 <viewController storyboardIdentifier="AlertDetailViewController" id="Odd-8Z-07R" customClass="AlertDetailViewController" customModule="iosOpenAPIDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Wos-Kl-1MZ" userLabel="ContentView">
+                    <view key="view" contentMode="scaleToFill" id="Wos-Kl-1MZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert Type Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akL-J2-JVm">
-                                <rect key="frame" x="20" y="127.5" width="374" height="26.5"/>
+                                <rect key="frame" x="20" y="97.5" width="374" height="19.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Alert Message Text View" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-kS-ClT">
-                                <rect key="frame" x="20" y="245.5" width="374" height="576.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Alert Message Text View" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-kS-ClT">
+                                <rect key="frame" x="20" y="153.5" width="374" height="668.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert date label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUs-0h-Ag8">
-                                <rect key="frame" x="20" y="68" width="374" height="19.5"/>
+                                <rect key="frame" x="20" y="68" width="374" height="14.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert Title Label" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Se-Sb-Vjl">
-                                <rect key="frame" x="20" y="184" width="374" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert Title Label" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Se-Sb-Vjl">
+                                <rect key="frame" x="20" y="127" width="374" height="21.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zGJ-yf-HhY"/>
-                        <color key="backgroundColor" red="0.2156862745" green="0.0" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.2156862745" green="0.0" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="akL-J2-JVm" firstAttribute="top" secondItem="GUs-0h-Ag8" secondAttribute="bottom" constant="40" id="5xK-z1-DCs"/>
+                            <constraint firstItem="akL-J2-JVm" firstAttribute="top" secondItem="GUs-0h-Ag8" secondAttribute="bottom" constant="15" id="5xK-z1-DCs"/>
                             <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="1Se-Sb-Vjl" secondAttribute="trailing" constant="20" id="FHp-lu-MiY"/>
                             <constraint firstItem="akL-J2-JVm" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="K5Y-Mg-LmG"/>
-                            <constraint firstItem="mPn-kS-ClT" firstAttribute="top" secondItem="1Se-Sb-Vjl" secondAttribute="bottom" constant="40" id="KyL-vv-c8L"/>
+                            <constraint firstItem="mPn-kS-ClT" firstAttribute="top" secondItem="1Se-Sb-Vjl" secondAttribute="bottom" constant="5" id="KyL-vv-c8L"/>
                             <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="akL-J2-JVm" secondAttribute="trailing" constant="20" id="P9c-uz-JKS"/>
                             <constraint firstItem="GUs-0h-Ag8" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="W7y-Li-CDt"/>
-                            <constraint firstItem="1Se-Sb-Vjl" firstAttribute="top" secondItem="akL-J2-JVm" secondAttribute="bottom" constant="30" id="XQ5-Hg-1ip"/>
+                            <constraint firstItem="1Se-Sb-Vjl" firstAttribute="top" secondItem="akL-J2-JVm" secondAttribute="bottom" constant="10" id="XQ5-Hg-1ip"/>
                             <constraint firstItem="zGJ-yf-HhY" firstAttribute="bottom" secondItem="mPn-kS-ClT" secondAttribute="bottom" constant="40" id="nzn-gb-DRv"/>
                             <constraint firstItem="1Se-Sb-Vjl" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="pu4-Kg-JPP"/>
                             <constraint firstItem="mPn-kS-ClT" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="qRM-La-3Dv"/>
@@ -333,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ysq-xv-SrO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2565" y="-522"/>
+            <point key="canvasLocation" x="2952" y="-522"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gAp-7c-EgS">

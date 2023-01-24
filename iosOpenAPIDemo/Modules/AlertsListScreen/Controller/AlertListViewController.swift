@@ -19,9 +19,12 @@ class AlertListViewController: UIViewController {
         self.AlertListTableView.delegate = self
         self.AlertListTableView.dataSource = self
         self.AlertListTableView.register(UINib(nibName: "AlertListTableViewCell", bundle: .main) , forCellReuseIdentifier: "AlertListTableViewCell")
-        self.title = "Alert List"
-        
         self.viewModel.updateNotificationsByCommunity()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = "Alert List"
     }
 }
 
