@@ -31,8 +31,14 @@ class AlertDetailViewController: UIViewController, UITextViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationItem.title = "Alert details"
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "Alert Details"
         self.navigationController?.navigationBar.topItem?.title = " "
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.title = "Alert Details"
     }
     
     func markOpened(with notification : INNotification) {

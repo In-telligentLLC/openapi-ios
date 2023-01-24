@@ -20,7 +20,7 @@ class AlertDetailViewModel : NSObject {
     init(notification: INNotification?, community: INCommunity?) {
         self.community = community
         if community == nil {
-            self.community = INCommunityManager.shared.getCommunity(by: notification?.buildingId ?? 0)
+            self.community = OpenAPI.getCommunitiesInfo(by: notification?.buildingId ?? 0)
         }
         self.notification = notification
     }

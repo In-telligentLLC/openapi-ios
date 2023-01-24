@@ -43,38 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 
-extension AppDelegate {
-    
-    static var isUserLoggedIn: Bool {
-        get {
-            return UserDefaults.standard.bool(forKey: "is_user_loggedIn") }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "is_user_loggedIn")
-            UserDefaults.standard.synchronize()
-        }
-    }
-}
-
-extension AppDelegate {
-    
-    static func havePushTokens() -> Bool {
-        if INPushManager.voipPushToken != "" && INPushManager.regularPushToken != "" {
-            return true
-        }
-        return false
-    }
-    
-    static var isPushRegistered: Bool {
-        get {
-            return UserDefaults.standard.bool(forKey: "is_push_registered")
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "is_push_registered")
-            UserDefaults.standard.synchronize()
-        }
-    }
-}
-
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
     // registering for remote notification permissions
@@ -116,12 +84,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
         if let dashBoardController = (window?.rootViewController?.children.last as? UINavigationController)?.topViewController as? DashBoardViewController {
             dashBoardController.isNotificationReceived = true
-            dashBoardController.isFromDashboard = true
+            if dashBoardController.revealViewController().frontViewPosition != FrontViewPosition.left {
+                dashBoardController.isFromDashboard = true
+            }
             dashBoardController.viewModel.fetchNotifications()
             dashBoardController.viewWillAppear(true)
             let notification = INNotification(dictionary: dictionary)
             guard let notficationID = notification?.buildingId else {return}
-            let community = INCommunityManager.shared.getCommunity(by: notficationID)
+            let community = OpenAPI.getCommunitiesInfo(by: notficationID)
             dashBoardController.gotoAlertDetail(with: community, and: notification)
         }
     }

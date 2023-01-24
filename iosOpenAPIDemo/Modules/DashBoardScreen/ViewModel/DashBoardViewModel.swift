@@ -18,7 +18,7 @@ class DashBoardViewModel : NSObject {
     
     override init() {
         super.init()
-        self.subscribedCommunities = INCommunityManager.shared.getSubscribedCommunities()
+        self.subscribedCommunities = OpenAPI.getCommunities()
     }
     
     var areLocationPermissionsAllowed : Bool {
@@ -60,7 +60,7 @@ class DashBoardViewModel : NSObject {
     }
     
     func checkPermissions(called:String, viewController: DashBoardViewController) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
             if !self.areLocationPermissionsAllowed {
                 if OpenAPI.doesClientRequiresLocationPermissions {
                     viewController.showSettingsAlert(type: "Locations")

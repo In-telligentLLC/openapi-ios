@@ -47,8 +47,7 @@ extension SearchCommunitiesViewController : UISearchBarDelegate {
             filteredCommunities = self.viewModel.searchCommunities
         }
         for communities in self.viewModel.searchCommunities {
-            if communities.name.uppercased().contains(searchText.uppercased())
-            {
+            if communities.name.uppercased().contains(searchText.uppercased()){
                 filteredCommunities.append(communities)
             }
         }
