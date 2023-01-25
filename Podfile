@@ -13,7 +13,8 @@ pod 'Alamofire', '~> 4.9.1'
 pod 'RealmSwift', '3.17.3'
 pod 'SwiftyJSON', '~> 5.0.0'
 pod 'OpenAPI', :path => '../int-openapi-ios/OpenAPI'
-pod 'SVProgressHUD' 
+pod 'SVProgressHUD'
+pod 'Localize', '~> 2.3.0' 
 
 end
 

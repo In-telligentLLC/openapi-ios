@@ -28,13 +28,6 @@ class AlertDetailViewController: UIViewController, UITextViewDelegate {
         self.alertMessageView.text = messageTrimmedString
         alertTimeLabel.text = notification.formattedDateString
         self.markOpened(with: notification)
-        
-        
-        
-        
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
