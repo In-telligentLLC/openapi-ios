@@ -14,9 +14,11 @@ import SwiftyJSON
 
 class DashBoardViewController: UIViewController {
     
-    // Variables declaration
+    // MARK: IBOutlet for sidemenu button, community tableView
     @IBOutlet var sideMenuButton: UIBarButtonItem!
     @IBOutlet var CommunityTableView: UITableView!
+    
+    // variables declaration
     var revealView: SWRevealViewController! = nil
     var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
     var viewModel = DashBoardViewModel()
@@ -37,13 +39,17 @@ class DashBoardViewController: UIViewController {
         view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
+        /// start OpenAPI flow
         OpenAPI.start(self)
         
         self.CommunityTableView.register(UINib(nibName: "DashBoardCommunitiesTableViewCell", bundle: .main), forCellReuseIdentifier: "DashBoardCommunitiesTableViewCell")
         
         NotificationCenter.default.addObserver(self, selector: #selector(didSubscribeToCommunities(notification:)), name: .subscriptionProcessDidComplete, object: nil)
         
+        /// check for notification permissions
         self.viewModel.checkForNotificationPermissions(viewController: self)
+        
+        /// check for location permissions
         INGeofencer.shared.didUpdateLocationStatus = { _ in
             self.viewModel.checkPermissions(called: "didUpdateLocationStatus" , viewController: self)
         }
@@ -97,6 +103,7 @@ extension DashBoardViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /// navigates to alert list screen when a community is tapped
         self.goToAlertList(with : self.viewModel.subscribedCommunities[indexPath.row])
     }
 }

@@ -12,7 +12,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
-    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -22,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.splashScreen()
     }
     
+    /// setting the appearance features and style of navigation bar
     func setNavigationBarStyle() {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = UIColor(red: 55.0/255.0, green: 0/255.0, blue: 179.0/255.0, alpha: 1.0)

@@ -12,14 +12,15 @@ import SVProgressHUD
 
 class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
     
-    // IBoutlet for signup button.
+    // MARK: IBoutlet for signup button.
     @IBOutlet var signUpButton: UIButton!
     
+    // MARK: View life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    //IBAction to perform when sign-in button is tapped
+    // MARK: IBAction to perform when sign-in button is tapped
     @IBAction func LoginWithDetails(_ sender: Any) {
         SVProgressHUD.show()
         OpenAPI.authorization() { error, status in
@@ -37,13 +38,13 @@ class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
     }
     
+    /// display an alert with a particular message
     func showAlertWithMessage(_ message: String) {
-        // create the alert
+        /// create the alert
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
-        // add an action (button)
+        /// add an action (button)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        // show the alert
+        /// show the alert
         self.present(alert, animated: true, completion: nil)
     }
 }
-
