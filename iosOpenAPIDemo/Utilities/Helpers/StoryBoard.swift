@@ -7,6 +7,7 @@
 
 import UIKit
 
+// declaration of enum 
 enum Storyboard : String {
     case onboarding = "Onboarding",
          main = "Main",
@@ -15,6 +16,7 @@ enum Storyboard : String {
          maps = "Maps",
          settings = "Settings"
     
+    // Variables declaration 
     var storyboard: UIStoryboard {
         return UIStoryboard(name: rawValue, bundle: nil)
     }

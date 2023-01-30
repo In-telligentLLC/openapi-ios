@@ -10,6 +10,7 @@ import OpenAPI
 
 class AlertDetailViewModel : NSObject {
     
+    // Variables declaration
     var community: INCommunity?
     var notification: INNotification?
     

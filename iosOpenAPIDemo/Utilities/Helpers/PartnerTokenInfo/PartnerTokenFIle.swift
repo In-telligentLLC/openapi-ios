@@ -8,5 +8,7 @@
 import Foundation
 
 class PartnerToken {
+    
+    /// gets partnertoken
     class func getPartnerToken() -> String { "YegJcZtroTjbv51Vw7PR" }
 }

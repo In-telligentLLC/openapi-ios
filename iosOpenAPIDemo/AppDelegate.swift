@@ -12,8 +12,9 @@ import OpenAPI
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    
+    /// configuring OpenAPI by choosing uat environment, to operate it .
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         self.registerForRemoteNotifications()
         OpenAPI.configure(to: .uat, partnerToken: PartnerToken.getPartnerToken(), currentSandboxType: .dev)
         print("current partner token = \(PartnerToken.getPartnerToken())")
@@ -42,10 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-
+// MARK: "UNUserNotificationCenterDelegate" protocol methods handles user selected actions from notifications
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
-    // registering for remote notification permissions
+    /// registering for remote notification permissions
     func registerForRemoteNotifications() {
         INPushManager.shared.requestForNotificationPermission { (_) in
             UNUserNotificationCenter.current().delegate = self
@@ -80,6 +81,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         completionHandler()
     }
     
+    /// launching alert details screen after tapping a notification
     func goToAlertDetails(dictionary: [AnyHashable: Any]) {
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
         if let dashBoardController = (window?.rootViewController?.children.last as? UINavigationController)?.topViewController as? DashBoardViewController {

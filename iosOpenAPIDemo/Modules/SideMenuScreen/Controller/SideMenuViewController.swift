@@ -7,7 +7,9 @@
 
 import UIKit
 
+// MARK: Declaring a struct
 struct SideMenuItems {
+    // Variables declaration
     let title:String
     let imageName:String
 }
@@ -16,18 +18,23 @@ class SideMenuViewController: UIViewController {
     
     var sideMenuContent:[SideMenuItems]! = nil
     
+    // MARK: IBOutlet for sidemenu tableView
     @IBOutlet var SideMenuTableView: UITableView!
+    
+    // MARK: View life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ///setting sidemenu content
         sideMenuContent = [SideMenuItems(title: "Home", imageName: "homekit"),
                            SideMenuItems(title: "Search Communitites", imageName: "magnifyingglass")]
         self.revealViewController().navigationController?.navigationBar.barTintColor = .red
+        /// registering cell for sidemenu tableView  with identifier "cell"
         self.SideMenuTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
     }
 }
 
+// MARK: tableView delegate, datasource methods
 extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,6 +59,7 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
         case [0,0] :
             revealViewController().revealToggle(animated: true)
         case [0,1]:
+            /// navigating to search communities screen
             if let vc = storyboard?.instantiateViewController(withIdentifier: "SearchCommunitiesViewController") as? SearchCommunitiesViewController {
                 let navignController = revealViewController().frontViewController as! UINavigationController
                 navignController.pushViewController(vc, animated: true)

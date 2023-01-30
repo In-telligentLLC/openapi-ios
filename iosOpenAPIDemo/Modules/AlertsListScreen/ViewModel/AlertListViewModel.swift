@@ -9,16 +9,17 @@ import UIKit
 import OpenAPI
 import RealmSwift
 
+// MARK: Declaring an enum
 enum AlertFilter {
     case all, normal, emergency, suggested, building
 }
 
 class AlertListViewModel: NSObject {
     
+    // variables declaration
     var community: INCommunity!
     var groupedNotifications: [(key: Date, value: [INNotification])] = []
     var filter: AlertFilter = .all
-    
     var notifications: [INNotification] = [] {
         didSet {
             self.groupedNotifications = Dictionary(grouping: self.notifications) {
@@ -37,6 +38,7 @@ class AlertListViewModel: NSObject {
         self.filter = filter
     }
     
+    /// fetches all notifications based on community id
     func updateNotificationsByCommunity() {
         self.notifications = OpenAPI.getNotificationsByBuilding(self.community?.id ?? 0).reversed()
     }

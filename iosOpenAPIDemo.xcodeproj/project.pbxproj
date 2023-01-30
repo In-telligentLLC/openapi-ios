@@ -45,7 +45,6 @@
 		4D76ED2C293DD70900467F33 /* CommunityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D76ED2A293DD70900467F33 /* CommunityCell.xib */; };
 		4D76ED37293DE81700467F33 /* AlertListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76ED35293DE81700467F33 /* AlertListTableViewCell.swift */; };
 		4D76ED38293DE81700467F33 /* AlertListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D76ED36293DE81700467F33 /* AlertListTableViewCell.xib */; };
-		4D76ED3B293DE87200467F33 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76ED3A293DE87200467F33 /* TestModel.swift */; };
 		4DA07E3D296B42A40050A2D7 /* AlertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07E3C296B42A40050A2D7 /* AlertDetailViewController.swift */; };
 		4DA07E3F296B464F0050A2D7 /* AlertDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07E3E296B464F0050A2D7 /* AlertDetailViewModel.swift */; };
 		91E462919434E11E82987E08 /* Pods_NotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48224C8B7FEA4A897E7170A /* Pods_NotificationServiceExtension.framework */; };
@@ -126,7 +125,6 @@
 		4D76ED2A293DD70900467F33 /* CommunityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityCell.xib; sourceTree = "<group>"; };
 		4D76ED35293DE81700467F33 /* AlertListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertListTableViewCell.swift; sourceTree = "<group>"; };
 		4D76ED36293DE81700467F33 /* AlertListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertListTableViewCell.xib; sourceTree = "<group>"; };
-		4D76ED3A293DE87200467F33 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		4DA07E3C296B42A40050A2D7 /* AlertDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDetailViewController.swift; sourceTree = "<group>"; };
 		4DA07E3E296B464F0050A2D7 /* AlertDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDetailViewModel.swift; sourceTree = "<group>"; };
 		A30DE8C9446F9DCC4C5C5C4A /* Pods-NotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-NotificationServiceExtension/Pods-NotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -459,7 +457,6 @@
 		4D76ED39293DE85C00467F33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4D76ED3A293DE87200467F33 /* TestModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -694,7 +691,6 @@
 				4D2B64292938AA50006DB4D1 /* DashBoardViewController.swift in Sources */,
 				4D607B372940752900E20ACA /* PartnerTokenFIle.swift in Sources */,
 				4DA07E3F296B464F0050A2D7 /* AlertDetailViewModel.swift in Sources */,
-				4D76ED3B293DE87200467F33 /* TestModel.swift in Sources */,
 				4D76ED22293DCF2600467F33 /* SearchCommunitiesViewController.swift in Sources */,
 				4D764EF22969DFE600F8B3AD /* StoryBoard.swift in Sources */,
 				4D2B64122938A948006DB4D1 /* AppDelegate.swift in Sources */,

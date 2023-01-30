@@ -11,16 +11,11 @@ import CoreLocation
 
 class DashBoardViewModel : NSObject {
     
+    // Variables declaration
     var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
     var subscribedCommunities : [INCommunity] = []
     var allNotifications: [INNotification] = []
     var alertsFetchCompletion: (() -> Void)?
-    
-    override init() {
-        super.init()
-        self.subscribedCommunities = OpenAPI.getCommunities()
-    }
-    
     var areLocationPermissionsAllowed : Bool {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways, .authorizedWhenInUse:
@@ -35,10 +30,18 @@ class DashBoardViewModel : NSObject {
         return true
     }
     
+    override init() {
+        super.init()
+        /// fetches all subscribed communities
+        self.subscribedCommunities = OpenAPI.getCommunities()
+    }
+    
+    /// shows settings alert when user permissions are denied for the resepctive type
     func showSettingsALert(type: String, viewcontroller: DashBoardViewController) {
         viewcontroller.showSettingsAlert(type: type)
     }
     
+    /// checks whether notification permissions are allowed or not , if they are not allowed a settings alert of type notifications will be displayed on the screen where user can navigate to settings and allow permissions
     func checkForNotificationPermissions(viewController: DashBoardViewController) {
         let current = UNUserNotificationCenter.current()
         current.getNotificationSettings(completionHandler: { (settings) in
@@ -59,6 +62,7 @@ class DashBoardViewModel : NSObject {
         })
     }
     
+    /// checks whether location permissions are allowed or not , if they are not allowed a settings alert of type locations will be displayed on the screen where user can navigate to settings and allow permissions
     func checkPermissions(called:String, viewController: DashBoardViewController) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
             if !self.areLocationPermissionsAllowed {
@@ -72,6 +76,7 @@ class DashBoardViewModel : NSObject {
         }
     }
     
+    /// fetches all saved notifications of all communities
     func fetchNotifications() {
         self.allNotifications = INNotification.getSavedNotificaitons()
         self.alertsFetchCompletion?()

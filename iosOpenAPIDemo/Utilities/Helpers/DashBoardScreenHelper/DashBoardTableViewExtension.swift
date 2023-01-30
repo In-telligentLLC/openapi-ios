@@ -10,6 +10,7 @@ import UIKit
 
 extension UITableView {
     
+    /// displays a message on screen by creating a label with specific features
     func setMessage(_ message: String) {
         let customUILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
         customUILabel.text = message
@@ -22,6 +23,7 @@ extension UITableView {
         self.separatorStyle = .none
     }
     
+    /// clears background of the screen
     func clearBackground() {
         self.backgroundView = nil
         self.separatorStyle = .singleLine

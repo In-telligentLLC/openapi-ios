@@ -10,18 +10,22 @@ import OpenAPI
 
 class AlertListTableViewCell: UITableViewCell {
     
+    // MARK: IBOutlet for alertNameLabel,alertTypeLabel,alertDateLabel,mainCardView,alertDescriptionLabel
+    
     @IBOutlet var alertNameLabel: UILabel!
     @IBOutlet var alertTypeLabel: UILabel!
     @IBOutlet var alertDateLabel: UILabel!
     @IBOutlet var mainCardView: UIView!
     @IBOutlet var alertDescriptionLabel: UILabel!
     
+    // Variables declaration
     var notification : INNotification? {
         didSet {
             self.setData()
         }
     }
     
+    /// setting notification name, notification type, notification message, notification date, cardView style and features
     func setData() {
         guard let notification = self.notification else { return }
         let descriptionTrimmedString = notification.message.trimmingCharacters(in: .whitespacesAndNewlines)

@@ -305,6 +305,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7z-MS-BNJ">
+                                <rect key="frame" x="20" y="778" width="374" height="44"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Translate">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tapOnTranslateButton:" destination="Odd-8Z-07R" eventType="touchUpInside" id="FuQ-c0-ima"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zGJ-yf-HhY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -314,15 +325,18 @@
                             <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="1Se-Sb-Vjl" secondAttribute="trailing" constant="20" id="FHp-lu-MiY"/>
                             <constraint firstItem="akL-J2-JVm" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="K5Y-Mg-LmG"/>
                             <constraint firstItem="mPn-kS-ClT" firstAttribute="top" secondItem="1Se-Sb-Vjl" secondAttribute="bottom" constant="5" id="KyL-vv-c8L"/>
+                            <constraint firstItem="O7z-MS-BNJ" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="NDu-Ur-KmJ"/>
                             <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="akL-J2-JVm" secondAttribute="trailing" constant="20" id="P9c-uz-JKS"/>
                             <constraint firstItem="GUs-0h-Ag8" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="W7y-Li-CDt"/>
                             <constraint firstItem="1Se-Sb-Vjl" firstAttribute="top" secondItem="akL-J2-JVm" secondAttribute="bottom" constant="10" id="XQ5-Hg-1ip"/>
+                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="bottom" secondItem="O7z-MS-BNJ" secondAttribute="bottom" constant="40" id="geL-6X-xi3"/>
                             <constraint firstItem="zGJ-yf-HhY" firstAttribute="bottom" secondItem="mPn-kS-ClT" secondAttribute="bottom" constant="150" id="nzn-gb-DRv"/>
                             <constraint firstItem="1Se-Sb-Vjl" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="pu4-Kg-JPP"/>
                             <constraint firstItem="mPn-kS-ClT" firstAttribute="leading" secondItem="zGJ-yf-HhY" secondAttribute="leading" constant="20" id="qRM-La-3Dv"/>
                             <constraint firstItem="GUs-0h-Ag8" firstAttribute="top" secondItem="zGJ-yf-HhY" secondAttribute="top" constant="20" id="ra0-gD-cTP"/>
                             <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="mPn-kS-ClT" secondAttribute="trailing" constant="20" id="sz9-Hu-kXr"/>
                             <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="GUs-0h-Ag8" secondAttribute="trailing" constant="20" id="uUs-4p-9gm"/>
+                            <constraint firstItem="zGJ-yf-HhY" firstAttribute="trailing" secondItem="O7z-MS-BNJ" secondAttribute="trailing" constant="20" id="wwK-x2-2jW"/>
                         </constraints>
                     </view>
                     <connections>
@@ -330,6 +344,7 @@
                         <outlet property="alertTimeLabel" destination="GUs-0h-Ag8" id="Wrt-iL-0Zg"/>
                         <outlet property="alertTitleLabel" destination="1Se-Sb-Vjl" id="Hgw-hQ-ln5"/>
                         <outlet property="alertTypeLabel" destination="akL-J2-JVm" id="yEc-0T-eEc"/>
+                        <outlet property="translateButton" destination="O7z-MS-BNJ" id="RcB-h5-Eh7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ysq-xv-SrO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

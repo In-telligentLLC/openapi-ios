@@ -9,6 +9,7 @@ import UIKit
 
 extension Date {
     
+    /// converts a string into date and returns date
     func formattedDate(from dateFormat: String) -> Date? {
         let dateString = self.toString(with: dateFormat)
         let dateFormatter = DateFormatter()
@@ -16,6 +17,7 @@ extension Date {
         return dateFormatter.date(from: dateString)
     }
     
+    /// converts a date into string and returns string
     func toString(with format: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
