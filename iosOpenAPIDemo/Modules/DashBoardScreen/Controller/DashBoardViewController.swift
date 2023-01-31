@@ -46,6 +46,20 @@ class DashBoardViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(didSubscribeToCommunities(notification:)), name: .subscriptionProcessDidComplete, object: nil)
         
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackGround), name: UIApplication.willResignActiveNotification, object: nil)
+        
+        let notificationCenterTwo = NotificationCenter.default
+        notificationCenterTwo.addObserver(self, selector: #selector(appMovedToForeGround), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    
+    @objc func appMovedToBackGround() {
+        self.dismiss(animated: true)
+    }
+    
+    @objc func appMovedToForeGround() {
         /// check for notification permissions
         self.viewModel.checkForNotificationPermissions(viewController: self)
         
@@ -54,17 +68,24 @@ class DashBoardViewController: UIViewController {
             self.viewModel.checkPermissions(called: "didUpdateLocationStatus" , viewController: self)
         }
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = "Communities List"
         self.navigationController?.navigationItem.titleView?.tintColor = .white
+        /// check for notification permissions
+        self.viewModel.checkForNotificationPermissions(viewController: self)
+        
+        /// check for location permissions
+        INGeofencer.shared.didUpdateLocationStatus = { _ in
+            self.viewModel.checkPermissions(called: "didUpdateLocationStatus" , viewController: self)
+        }
         if isFromDashboard {
             self.revealViewController().revealToggle(animated: true)
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
         isFromDashboard = false
     }
     

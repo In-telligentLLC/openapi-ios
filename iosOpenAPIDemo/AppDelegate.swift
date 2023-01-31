@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// configuring OpenAPI by choosing uat environment, to operate it .
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.registerForRemoteNotifications()
-        OpenAPI.configure(to: .uat, partnerToken: PartnerToken.getPartnerToken(), currentSandboxType: .dev)
+        OpenAPI.configure(to: .uat, partnerToken: PartnerToken.getPartnerToken(), currentSandboxType: .prod)
         print("current partner token = \(PartnerToken.getPartnerToken())")
         window = UIWindow(frame: UIScreen.main.bounds)
         return true
