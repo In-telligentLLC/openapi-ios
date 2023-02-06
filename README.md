@@ -5,5 +5,4 @@
 ### What's new
  1. Change in login / signup.
  2. Optimised api calls.
- 3. Android 13 support
 
