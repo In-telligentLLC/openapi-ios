@@ -20,7 +20,6 @@
 >- [Notification actions handling](#notification-actions-handling)
 - [How to test](#how-to-test)
 - [Language translation](#language-translation)
-- [References](#references)
 
 
 ## What is OpenAPI
@@ -320,6 +319,3 @@ INLanguageManager.getTranslation(for: notification, to: language) { (translation
              }
          }
 ```
-
-## References
-   1. https://chrome.google.com/webstore/detail/restlet-client-rest-api-t/aejoelaoggembcahagimdiliamlcdmfm?hl=en
