@@ -1,4 +1,4 @@
-# OpenAPI integration  [![version](https://img.shields.io/badge/iOS_CocoaPods_version-1.0.9-green)](https://github.com/CocoaPods/Specs/blob/master/Specs/3/4/b/OpenAPI/1.0.9/OpenAPI.podspec.json)
+# OpenAPI integration  [![version](https://img.shields.io/badge/iOS_CocoaPods_version-1.1.2-green)](https://github.com/CocoaPods/Specs/blob/master/Specs/3/4/b/OpenAPI/1.1.2/OpenAPI.podspec.json)
 
 **Table of Contents**
 
@@ -60,7 +60,7 @@ In-telligent system comes with geofence based communities to group audience. Thi
             Xcode 14.0.0 -> OpenAPI version - v 1.0.6
             Xcode 14.0.1 -> OpenAPI version -  v 1.0.7
             Xcode 14.1 -> OpenAPI version - v 1.0.8
-            Xcode 14.2 -> OpenAPI version - v 1.0.9
+            Xcode 14.2 -> OpenAPI version - v 1.1.2
     ```
 - iOS Mobile Version 13.0 and above
 - Open API library file or with Pod
@@ -222,29 +222,83 @@ Using In-Telligent Portal. If you are using In-telligent system to send alerts, 
 + Select a community from list under Communities tab to send an alert.
 + Once community page is opened, click on “send a community alert” from left sidebar navigation.
 + Enter required fields, select type of alert and click on send button.
-+ If everything went well, device should receive the alert and the respective sound. Below is the sample notification payload:
++ If everything went well, device should receive the alert and the respective sound.
++ If notification size is equal or below 4KB size then its fullPayloadContent value will be true / 1 and no need of doing the getnotification Api call in AlertDetails screen.
++ If notification size is morethan 4KB size then its fullPayloadContent value will be false / 0 and we need to do the getnotification Api call in AlertDetails screen, Below is the sample notification payload for both the cases:
 ```swift
-{
- "data": {
-  "payload_version":"2",
-  "building": {
-   “name":  "Test Community",
-   "id":"12345"
-  },
- "data": {
-  "title": "test alert please ignore",
-  "body": "test alert please ignore"
- },
- "notification"{
-  "action": "pushNotification",
-  "language": "en",
-  "id": "12345",
-  "type": "normal",
-  "suffix": "to refer back to this alert or to see more information, please open the App"
- }
+If Payload size is morethan 4KB.
+
+
+ {
+ "fullPayloadContent": 0,
+ "building": {
+    "id" : 33726,
+    "name" : "TestNotification2"
 },
-"to": "fW40hcEO9PA:APA91bFJr2-nwkSuBfhL3_g2Q3iPZOZGcx-P6B_zVVR_7k1zMDC-qFIYcdzdNE_h2ecRO17Sw2tvcHp7xLkAArajyILRAgYolHJt8CuXo7t66TB48VoOeTdQPI-Mtq0HKjxKPXF4S_BM"
+"payload_version": 2,
+"aps": {
+    "alert" : {
+        "body" : "test Morethan 4kbtest body text”,
+        "title" : "test Morethan 4kbtest title text”,
+    }.
+    "badge" : 1,
+    "category" : "alerts",
+    "mutable-content" : 1,
+    "sound" : "default"
+},
+"notification": {
+    "action" : "pushNotification",
+    "id" : 3178071;
+    "language" : "en",
+    "suffix" : "to refer back to this alert or to see more information, please open the App",
+    "type" : "normal"
+},
+ "topic": "com.intelligent.alertapanama"
 }
+```
+
+```swift 
+If Payload size is 4KB or less.
+
+
+{
+"notification": {
+    "action": "pushNotification"
+    attachments: [
+                {
+            "filename": "0c66873debb1b276be7ade89d54f0e6f_IMG_337F671CF8B3_1_jpeg.jpeg",
+            "notificationId": 3178072,
+            "url": "https://app.uat.in-telligent.com/img/notifications/0c66873debb1b276be7ade89d54f0e6f_IMG_337F671CF8B3_1_jpeg.jpeg",
+        },
+        {
+            "filename": "0c66873debb1b276be7ade89d54f0e6f_IMG_337F671CF8B3_1_jpeg.jpeg",
+            "notificationId": 3178072,
+            "url": "https://app.uat.in-telligent.com/img/notifications/0c66873debb1b276be7ade89d54f0e6f_IMG_337F671CF8B3_1_jpeg.jpeg",
+        }
+    ],
+    "id": 3178072,
+    "language": "en",
+    "suffix": "to refer back to this alert or to see more information, please open the App",
+    "type": "normal",
+}, 
+"payload_version": 2, 
+"topic": "com.intelligent.alertapanama",
+"aps": {
+    "alert": {
+        "body": "Test description",
+        "title": "Test title",
+    },
+    "badge": 1,
+    "category": "alerts",
+    "mutable-content": 1,
+    "sound": "default",
+}, "building": {
+    "id": 33726,
+    "name": "TestNotification2"
+}, 
+"fullPayloadContent": 1
+}
+
 ```
 #### Description of the above payload parameters
 
