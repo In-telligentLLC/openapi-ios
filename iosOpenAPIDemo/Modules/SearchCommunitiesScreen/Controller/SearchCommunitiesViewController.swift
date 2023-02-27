@@ -8,17 +8,28 @@
 import UIKit
 import OpenAPI
 
+/// this class is responsible for searching a community from a list of communities
 class SearchCommunitiesViewController: UIViewController {
     
-    // MARK: IBOutlet for searchCommunitiesTableView,CommunitySearchBar
+    // MARK: IBOutlet variables
+    
+    /// SearchCommunitiesTableView: a table view which displays list of all communities
     @IBOutlet var SearchCommunitiesTableView: UITableView!
+    
+    ///CommunitySearchBar : a search bar where a community can be searched
     @IBOutlet var CommunitySearchBar: UISearchBar!
     
-    // Variables declaration
+    // MARK: Variables declaration
+    
+    /// filteredCommunities: an array of type INCommunity
     var filteredCommunities : [INCommunity] = []
+
+    /// viewModel : an instance of searchCommunitiesViewModel class
     var viewModel = searchCommunitiesViewModel()
     
     // MARK: View life cycle methods
+    
+    /// loads a list of all communities on the search communities screen
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Search Communities"
@@ -29,12 +40,25 @@ class SearchCommunitiesViewController: UIViewController {
     }
 }
 
+
 extension SearchCommunitiesViewController : UITableViewDelegate, UITableViewDataSource {
     
+    //MARK: UITableViewDelegate, UITableViewDataSource methods
+    /// gives count of all communities
+    /// - Parameters:
+    ///   - tableView: SearchCommunitiesTableView
+    ///   - section: number of sections in a table view
+    /// - Returns:returns count of all communities
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredCommunities.count
     }
     
+    
+    /// gives community names to cells of the table view
+    /// - Parameters:
+    ///   - tableView: SearchCommunitiesTableView
+    ///   - indexPath: the index path locating the row in the table view.
+    /// - Returns: community names to the cells of table view
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let community = filteredCommunities[indexPath.row]
@@ -44,10 +68,15 @@ extension SearchCommunitiesViewController : UITableViewDelegate, UITableViewData
     }
 }
 
-// MARK: "UISearchBarDelegate" protocol contains methods which are implemented to make use of search bar and its functionality
+// MARK: extension for UISearchBarDelegate
+/// this protocol contains methods which are implemented to make use of search bar and its functionality
 extension SearchCommunitiesViewController : UISearchBarDelegate {
     
-    /// if user changes the search text in search bar, filter community names based on the search
+    //MARK: UISearchBarDelegate methods 
+    /// if user changes the search text in search bar, the community list filters community names based on the search
+    /// - Parameters:
+    ///   - searchBar: the search bar that is being edited.
+    ///   - searchText: the current text in the search text field.
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredCommunities = []
         if searchText == "" {
@@ -62,6 +91,7 @@ extension SearchCommunitiesViewController : UISearchBarDelegate {
     }
     
     /// keyboard gets disappeared when search button is clicked on search bar
+    /// - Parameter searchBar: the search bar that is being edited.
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.CommunitySearchBar.endEditing(true)
     }

@@ -8,9 +8,12 @@
 import UIKit
 import OpenAPI
 
+/// this class is responsible for displaying a splash screen
 class SplashViewController: UIViewController {
     
-    ///  loading the view and checking whether user is already registered or not , if the user is a registered user navigate directly to dashboard activity else navigate to login activity.
+    //MARK: View life cycle methods
+    
+    ///called whenever view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
     }

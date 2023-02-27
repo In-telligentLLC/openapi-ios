@@ -8,9 +8,12 @@
 import Foundation
 import UIKit
 
+/// handles cells in table view
 extension UITableView {
     
+    //MARK: Static methods 
     /// displays a message on screen by creating a label with specific features
+    /// - Parameter message: a string which will be displayed on the custom label created
     func setMessage(_ message: String) {
         let customUILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
         customUILabel.text = message

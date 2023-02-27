@@ -9,13 +9,24 @@ import Foundation
 import OpenAPI
 import CoreLocation
 
+/// this class is responsible for storing the logic behind displaying list of communities in dash board screen
 class DashBoardViewModel : NSObject {
     
-    // Variables declaration
+    // MARK: Variables declaration
+    
+    /// appDelegate: an instance of AppDelegate
     var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    /// subscribedCommunities : an array of type INCommunity which stores list of subscribed communities
     var subscribedCommunities : [INCommunity] = []
+    
+    /// allNotifications: an array of type INNotification
     var allNotifications: [INNotification] = []
+    
+    /// alertsFetchCompletion: a variable which provides a return type Void
     var alertsFetchCompletion: (() -> Void)?
+    
+    /// areLocationPermissionsAllowed: a boolean type variable
     var areLocationPermissionsAllowed : Bool {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways, .authorizedWhenInUse:
@@ -30,18 +41,26 @@ class DashBoardViewModel : NSObject {
         return true
     }
     
+    // MARK: Initialization
+    
+    /// fetches all subscribed communities
     override init() {
         super.init()
-        /// fetches all subscribed communities
         self.subscribedCommunities = OpenAPI.getCommunities()
     }
     
-    /// shows settings alert when user permissions are denied for the resepctive type
+    // MARK: Static methods
+    
+    /// shows settings alert when user permissions are denied for the respective type
+    /// - Parameters:
+    ///   - type: a string value based on which alert will be displayed
+    ///   - viewcontroller: the viewcontroller where the alert feature need to be implemented
     func showSettingsALert(type: String, viewcontroller: DashBoardViewController) {
         viewcontroller.showSettingsAlert(type: type)
     }
     
-    /// checks whether notification permissions are allowed or not , if they are not allowed a settings alert of type notifications will be displayed on the screen where user can navigate to settings and allow permissions
+    /// checks whether notification permissions are allowed or not
+    /// - Parameter viewController: viewcontroller where the checking of notification permissions should be implemented
     func checkForNotificationPermissions(viewController: DashBoardViewController) {
         let current = UNUserNotificationCenter.current()
         current.getNotificationSettings(completionHandler: { (settings) in
@@ -62,7 +81,10 @@ class DashBoardViewModel : NSObject {
         })
     }
     
-    /// checks whether location permissions are allowed or not , if they are not allowed a settings alert of type locations will be displayed on the screen where user can navigate to settings and allow permissions
+    /// checks whether location permissions are allowed or not
+    /// - Parameters:
+    ///   - called: a string value "didUpdateLocationStatus"
+    ///   - viewController: viewcontroller where the checking of location permissions should be implemented
     func checkPermissions(called:String, viewController: DashBoardViewController) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
             if !self.areLocationPermissionsAllowed {

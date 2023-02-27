@@ -1,10 +1,10 @@
 PODS:
   - Alamofire (4.9.1)
   - Localize (2.3.0)
-  - OpenAPI (1.0.0):
-    - Alamofire (~> 4.9.1)
-    - RealmSwift (= 3.17.3)
-    - SwiftyJSON (~> 5.0.0)
+  - OpenAPI (1.1.2):
+    - Alamofire
+    - RealmSwift
+    - SwiftyJSON
   - Realm (3.17.3):
     - Realm/Headers (= 3.17.3)
   - Realm/Headers (3.17.3)
@@ -16,7 +16,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.9.1)
   - Localize (~> 2.3.0)
-  - OpenAPI (from `../int-openapi-ios/OpenAPI`)
+  - OpenAPI
+  - OpenAPI (= 1.1.2)
   - RealmSwift (= 3.17.3)
   - SVProgressHUD
   - SwiftyJSON (~> 5.0.0)
@@ -25,24 +26,21 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Localize
+    - OpenAPI
     - Realm
     - RealmSwift
     - SVProgressHUD
     - SwiftyJSON
 
-EXTERNAL SOURCES:
-  OpenAPI:
-    :path: "../int-openapi-ios/OpenAPI"
-
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Localize: cb1ae53ed73decaad0dce217806ed983091913f5
-  OpenAPI: 56e6e07791764f419a8a4315c014a19cf2de7fec
+  OpenAPI: bf9f1372ed62eabe1bdd7b23a34807138c81959c
   Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
   RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 1f7eb7e2ac0884d8d339deb9e22d4ef195282c6f
+PODFILE CHECKSUM: 06c1d8349cf1d9eb9269d791b4df2086c2a9154a
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

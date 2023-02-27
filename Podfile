@@ -8,11 +8,11 @@ target 'iosOpenAPIDemo' do
   # Pods for iosOpenAPIDemo
 
 
-#pod 'OpenAPI'
+pod 'OpenAPI', '1.1.2'
 pod 'Alamofire', '~> 4.9.1'
 pod 'RealmSwift', '3.17.3'
 pod 'SwiftyJSON', '~> 5.0.0'
-pod 'OpenAPI', :path => '../int-openapi-ios/OpenAPI'
+#pod 'OpenAPI', :path => '../int-openapi-ios/OpenAPI'
 pod 'SVProgressHUD'
 pod 'Localize', '~> 2.3.0' 
 
@@ -24,6 +24,7 @@ target 'NotificationServiceExtension' do
 
   # Pods for NotificationServiceExtension
 
-pod 'OpenAPI', :path => '../int-openapi-ios/OpenAPI'
+pod 'OpenAPI'
+#, :path => '../int-openapi-ios/OpenAPI'
 
 end

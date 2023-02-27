@@ -10,7 +10,7 @@ import OpenAPI
 
 class NotificationService: UNNotificationServiceExtension {
     
-    // Variables declaration
+    //MARK: Variables declaration
     var contentHandler: ((UNNotificationContent) -> Void)?
     var bestAttemptContent: UNMutableNotificationContent?
     
