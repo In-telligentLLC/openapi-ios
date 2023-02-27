@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26FC42CB32B870A838BB5A26 /* Pods_NotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32009E2829CEAD54D0894CE2 /* Pods_NotificationServiceExtension.framework */; };
+		190EC4D8D902BC33697E5A7F /* Pods_NotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1A8108D7321A857A74FC66 /* Pods_NotificationServiceExtension.framework */; };
 		4D2B64122938A948006DB4D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B64112938A948006DB4D1 /* AppDelegate.swift */; };
 		4D2B64142938A948006DB4D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B64132938A948006DB4D1 /* SceneDelegate.swift */; };
 		4D2B64192938A949006DB4D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D2B64172938A949006DB4D1 /* Main.storyboard */; };
@@ -45,7 +45,7 @@
 		4D76ED38293DE81700467F33 /* AlertListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D76ED36293DE81700467F33 /* AlertListTableViewCell.xib */; };
 		4DA07E3D296B42A40050A2D7 /* AlertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07E3C296B42A40050A2D7 /* AlertDetailViewController.swift */; };
 		4DA07E3F296B464F0050A2D7 /* AlertDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07E3E296B464F0050A2D7 /* AlertDetailViewModel.swift */; };
-		77C5131BB7B58F2A9E63A067 /* Pods_iosOpenAPIDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AC9D692488340E2ECF9C6C /* Pods_iosOpenAPIDemo.framework */; };
+		6FEAE10E179D842D20983D5F /* Pods_iosOpenAPIDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86D18D73FFBD14C83D4919B /* Pods_iosOpenAPIDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,10 +73,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		07A5566FBB784CE36ABBBDF6 /* Pods-iosOpenAPIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosOpenAPIDemo.debug.xcconfig"; path = "Target Support Files/Pods-iosOpenAPIDemo/Pods-iosOpenAPIDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		23AC9D692488340E2ECF9C6C /* Pods_iosOpenAPIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosOpenAPIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		32009E2829CEAD54D0894CE2 /* Pods_NotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		36F5C56DFE4659071B0E6821 /* Pods-iosOpenAPIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosOpenAPIDemo.release.xcconfig"; path = "Target Support Files/Pods-iosOpenAPIDemo/Pods-iosOpenAPIDemo.release.xcconfig"; sourceTree = "<group>"; };
+		12534DF4278CEEFEDA780E58 /* Pods-iosOpenAPIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosOpenAPIDemo.release.xcconfig"; path = "Target Support Files/Pods-iosOpenAPIDemo/Pods-iosOpenAPIDemo.release.xcconfig"; sourceTree = "<group>"; };
+		2B856970D81B9973ECABFDCF /* Pods-NotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-NotificationServiceExtension/Pods-NotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		4B0D04EF43C2F8A1EAF235C2 /* Pods-iosOpenAPIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosOpenAPIDemo.debug.xcconfig"; path = "Target Support Files/Pods-iosOpenAPIDemo/Pods-iosOpenAPIDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		4D2B640E2938A948006DB4D1 /* iosOpenAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosOpenAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D2B64112938A948006DB4D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D2B64132938A948006DB4D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,8 +122,9 @@
 		4D76ED36293DE81700467F33 /* AlertListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertListTableViewCell.xib; sourceTree = "<group>"; };
 		4DA07E3C296B42A40050A2D7 /* AlertDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDetailViewController.swift; sourceTree = "<group>"; };
 		4DA07E3E296B464F0050A2D7 /* AlertDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDetailViewModel.swift; sourceTree = "<group>"; };
-		5DCBD9F9090A5C9BED1C4206 /* Pods-NotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-NotificationServiceExtension/Pods-NotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
-		CB108A938A5234112B795460 /* Pods-NotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-NotificationServiceExtension/Pods-NotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		7A1A8108D7321A857A74FC66 /* Pods_NotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E86D18D73FFBD14C83D4919B /* Pods_iosOpenAPIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosOpenAPIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F616226466E6FB3623796949 /* Pods-NotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-NotificationServiceExtension/Pods-NotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77C5131BB7B58F2A9E63A067 /* Pods_iosOpenAPIDemo.framework in Frameworks */,
+				6FEAE10E179D842D20983D5F /* Pods_iosOpenAPIDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,13 +140,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26FC42CB32B870A838BB5A26 /* Pods_NotificationServiceExtension.framework in Frameworks */,
+				190EC4D8D902BC33697E5A7F /* Pods_NotificationServiceExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BE0CFFD0C8F1D7AED992FD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A1A8108D7321A857A74FC66 /* Pods_NotificationServiceExtension.framework */,
+				E86D18D73FFBD14C83D4919B /* Pods_iosOpenAPIDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4D2B64052938A948006DB4D1 = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +164,7 @@
 				4D5C4BB929683BEC00B0C7A8 /* NotificationServiceExtension */,
 				4D2B640F2938A948006DB4D1 /* Products */,
 				61B7F936AF72E60D94272389 /* Pods */,
-				F10FEEE0DF73D27CBEA00F20 /* Frameworks */,
+				0BE0CFFD0C8F1D7AED992FD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -476,21 +485,12 @@
 		61B7F936AF72E60D94272389 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CB108A938A5234112B795460 /* Pods-NotificationServiceExtension.debug.xcconfig */,
-				5DCBD9F9090A5C9BED1C4206 /* Pods-NotificationServiceExtension.release.xcconfig */,
-				07A5566FBB784CE36ABBBDF6 /* Pods-iosOpenAPIDemo.debug.xcconfig */,
-				36F5C56DFE4659071B0E6821 /* Pods-iosOpenAPIDemo.release.xcconfig */,
+				F616226466E6FB3623796949 /* Pods-NotificationServiceExtension.debug.xcconfig */,
+				2B856970D81B9973ECABFDCF /* Pods-NotificationServiceExtension.release.xcconfig */,
+				4B0D04EF43C2F8A1EAF235C2 /* Pods-iosOpenAPIDemo.debug.xcconfig */,
+				12534DF4278CEEFEDA780E58 /* Pods-iosOpenAPIDemo.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		F10FEEE0DF73D27CBEA00F20 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				32009E2829CEAD54D0894CE2 /* Pods_NotificationServiceExtension.framework */,
-				23AC9D692488340E2ECF9C6C /* Pods_iosOpenAPIDemo.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,12 +500,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D2B64222938A94E006DB4D1 /* Build configuration list for PBXNativeTarget "iosOpenAPIDemo" */;
 			buildPhases = (
-				1C10733D43C1211191710810 /* [CP] Check Pods Manifest.lock */,
+				3D32F18758F37CCE752E29BD /* [CP] Check Pods Manifest.lock */,
 				4D2B640A2938A948006DB4D1 /* Sources */,
 				4D2B640B2938A948006DB4D1 /* Frameworks */,
 				4D2B640C2938A948006DB4D1 /* Resources */,
 				4D607B492940C19F00E20ACA /* Embed Foundation Extensions */,
-				715E59E87E45D9B15E3ED632 /* [CP] Embed Pods Frameworks */,
+				26BEBE6B9687E04CBBF30CD5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -521,7 +521,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D5C4BC229683BEC00B0C7A8 /* Build configuration list for PBXNativeTarget "NotificationServiceExtension" */;
 			buildPhases = (
-				F404B36479D288ABD4101EE2 /* [CP] Check Pods Manifest.lock */,
+				22CA98B799229E7675B44D38 /* [CP] Check Pods Manifest.lock */,
 				4D5C4BB429683BEB00B0C7A8 /* Sources */,
 				4D5C4BB529683BEB00B0C7A8 /* Frameworks */,
 				4D5C4BB629683BEB00B0C7A8 /* Resources */,
@@ -605,7 +605,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C10733D43C1211191710810 /* [CP] Check Pods Manifest.lock */ = {
+		22CA98B799229E7675B44D38 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -620,14 +620,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iosOpenAPIDemo-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-NotificationServiceExtension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		715E59E87E45D9B15E3ED632 /* [CP] Embed Pods Frameworks */ = {
+		26BEBE6B9687E04CBBF30CD5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -644,7 +644,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosOpenAPIDemo/Pods-iosOpenAPIDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F404B36479D288ABD4101EE2 /* [CP] Check Pods Manifest.lock */ = {
+		3D32F18758F37CCE752E29BD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -659,7 +659,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NotificationServiceExtension-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-iosOpenAPIDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -856,7 +856,7 @@
 		};
 		4D2B64232938A94E006DB4D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07A5566FBB784CE36ABBBDF6 /* Pods-iosOpenAPIDemo.debug.xcconfig */;
+			baseConfigurationReference = 4B0D04EF43C2F8A1EAF235C2 /* Pods-iosOpenAPIDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
@@ -901,7 +901,7 @@
 		};
 		4D2B64242938A94E006DB4D1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36F5C56DFE4659071B0E6821 /* Pods-iosOpenAPIDemo.release.xcconfig */;
+			baseConfigurationReference = 12534DF4278CEEFEDA780E58 /* Pods-iosOpenAPIDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
@@ -944,7 +944,7 @@
 		};
 		4D5C4BC029683BEC00B0C7A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB108A938A5234112B795460 /* Pods-NotificationServiceExtension.debug.xcconfig */;
+			baseConfigurationReference = F616226466E6FB3623796949 /* Pods-NotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -974,7 +974,7 @@
 		};
 		4D5C4BC129683BEC00B0C7A8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DCBD9F9090A5C9BED1C4206 /* Pods-NotificationServiceExtension.release.xcconfig */;
+			baseConfigurationReference = 2B856970D81B9973ECABFDCF /* Pods-NotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
