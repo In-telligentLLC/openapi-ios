@@ -9,9 +9,12 @@ import UIKit
 import OpenAPI
 import Localize
 
+/// handles lauching various screens 
 extension UIViewController {
     
+    //MARK: Static methods 
     /// navigates to alert list screen
+    /// - Parameter community: an optional value which contains all the details of a particular community tapped
     func goToAlertList(with community : INCommunity?) {
         guard let viewController = Storyboard.main.viewController(AlertListViewController.self) else { return }
         viewController.viewModel = AlertListViewModel(community, filter: .building)
@@ -19,6 +22,9 @@ extension UIViewController {
     }
     
     /// navigates to alert detail screen
+    /// - Parameters:
+    ///   - community: an optional value which contains all the details of a particular community tapped
+    ///   - notification: an optional value which which contains details of notification
     func gotoAlertDetail(with community: INCommunity?, and notification: INNotification?) {
         guard let alertDetailController = Storyboard.main.viewController(AlertDetailViewController.self) else {
             return

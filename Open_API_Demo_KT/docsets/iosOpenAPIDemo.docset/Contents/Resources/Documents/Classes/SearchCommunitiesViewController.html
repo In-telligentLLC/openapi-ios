@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SearchCommunitiesViewController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/SearchCommunitiesViewController" class="dashAnchor"></a>
+    <a title="SearchCommunitiesViewController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">iosOpenAPIDemo 1.0 Docs</a> (100% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">iosOpenAPIDemo Reference</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        SearchCommunitiesViewController Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AlertDetailViewController.html">AlertDetailViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AlertDetailViewModel.html">AlertDetailViewModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AlertListTableViewCell.html">AlertListTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AlertListViewController.html">AlertListViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AlertListViewModel.html">AlertListViewModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DashBoardCommunitiesTableViewCell.html">DashBoardCommunitiesTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DashBoardViewController.html">DashBoardViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DashBoardViewModel.html">DashBoardViewModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LoginViewController.html">LoginViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PartnerToken.html">PartnerToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SceneDelegate.html">SceneDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SearchCommunitiesViewController.html">SearchCommunitiesViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SideMenuViewController.html">SideMenuViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SplashViewController.html">SplashViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/searchCommunitiesViewModel.html">searchCommunitiesViewModel</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AlertFilter.html">AlertFilter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Storyboard.html">Storyboard</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITableView.html">UITableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/SideMenuItems.html">SideMenuItems</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SearchCommunitiesViewController</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">SearchCommunitiesViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">SearchCommunitiesViewController</span> <span class="p">:</span> <span class="kt">UITableViewDelegate</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">SearchCommunitiesViewController</span> <span class="p">:</span> <span class="kt">UISearchBarDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>this class is responsible for searching a community from a list of communities</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/IBOutlet%20variables"></a>
+                <a name="//apple_ref/swift/Section/IBOutlet variables" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/IBOutlet%20variables"></a>
+                  <h3 class="section-name"><span>IBOutlet variables</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@iosOpenAPIDemo@objc(cs)SearchCommunitiesViewController(py)SearchCommunitiesTableView"></a>
+                    <a name="//apple_ref/swift/Property/SearchCommunitiesTableView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@iosOpenAPIDemo@objc(cs)SearchCommunitiesViewController(py)SearchCommunitiesTableView">SearchCommunitiesTableView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>SearchCommunitiesTableView: a table view which displays list of all communities</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">var</span> <span class="nv">SearchCommunitiesTableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@iosOpenAPIDemo@objc(cs)SearchCommunitiesViewController(py)CommunitySearchBar"></a>
+                    <a name="//apple_ref/swift/Property/CommunitySearchBar" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@iosOpenAPIDemo@objc(cs)SearchCommunitiesViewController(py)CommunitySearchBar">CommunitySearchBar</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>CommunitySearchBar : a search bar where a community can be searched</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">var</span> <span class="nv">CommunitySearchBar</span><span class="p">:</span> <span class="kt">UISearchBar</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Variables%20declaration"></a>
+                <a name="//apple_ref/swift/Section/Variables declaration" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Variables%20declaration"></a>
+                  <h3 class="section-name"><span>Variables declaration</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14iosOpenAPIDemo31SearchCommunitiesViewControllerC08filteredE0Say0B3API11INCommunityCGvp"></a>
+                    <a name="//apple_ref/swift/Property/filteredCommunities" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14iosOpenAPIDemo31SearchCommunitiesViewControllerC08filteredE0Say0B3API11INCommunityCGvp">filteredCommunities</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>filteredCommunities: an array of type INCommunity</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">filteredCommunities</span><span class="p">:</span> <span class="p">[</span><span class="kt">INCommunity</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14iosOpenAPIDemo31SearchCommunitiesViewControllerC9viewModelAA06searchefI0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/viewModel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14iosOpenAPIDemo31SearchCommunitiesViewControllerC9viewModelAA06searchefI0Cvp">viewModel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>viewModel : an instance of searchCommunitiesViewModel class</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">viewModel</span><span class="p">:</span> <span class="n"><a href="../Classes/searchCommunitiesViewModel.html">searchCommunitiesViewModel</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/View%20life%20cycle%20methods"></a>
+                <a name="//apple_ref/swift/Section/View life cycle methods" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/View%20life%20cycle%20methods"></a>
+                  <h3 class="section-name"><span>View life cycle methods</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@iosOpenAPIDemo@objc(cs)SearchCommunitiesViewController(im)viewDidLoad"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@iosOpenAPIDemo@objc(cs)SearchCommunitiesViewController(im)viewDidLoad">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>loads a list of all communities on the search communities screen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UITableViewDelegate%2C%20UITableViewDataSource%20methods"></a>
+                <a name="//apple_ref/swift/Section/UITableViewDelegate, UITableViewDataSource methods" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/UITableViewDelegate%2C%20UITableViewDataSource%20methods"></a>
+                  <h3 class="section-name"><span>UITableViewDelegate, UITableViewDataSource methods</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@iosOpenAPIDemo@objc(cs)SearchCommunitiesViewController(im)tableView:numberOfRowsInSection:"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:numberOfRowsInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@iosOpenAPIDemo@objc(cs)SearchCommunitiesViewController(im)tableView:numberOfRowsInSection:">tableView(_:<wbr>numberOfRowsInSection:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>gives count of all communities</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tableView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>SearchCommunitiesTableView</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>section</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>number of sections in a table view</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>returns count of all communities</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@iosOpenAPIDemo@objc(cs)SearchCommunitiesViewController(im)tableView:cellForRowAtIndexPath:"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:cellForRowAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@iosOpenAPIDemo@objc(cs)SearchCommunitiesViewController(im)tableView:cellForRowAtIndexPath:">tableView(_:<wbr>cellForRowAt:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>gives community names to cells of the table view</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tableView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>SearchCommunitiesTableView</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>indexPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the index path locating the row in the table view.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>community names to the cells of table view</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UISearchBarDelegate%20methods"></a>
+                <a name="//apple_ref/swift/Section/UISearchBarDelegate methods" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/UISearchBarDelegate%20methods"></a>
+                  <h3 class="section-name"><span>UISearchBarDelegate methods</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@iosOpenAPIDemo@objc(cs)SearchCommunitiesViewController(im)searchBar:textDidChange:"></a>
+                    <a name="//apple_ref/swift/Method/searchBar(_:textDidChange:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@iosOpenAPIDemo@objc(cs)SearchCommunitiesViewController(im)searchBar:textDidChange:">searchBar(_:<wbr>textDidChange:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>if user changes the search text in search bar, the community list filters community names based on the search</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">searchBar</span><span class="p">(</span><span class="n">_</span> <span class="nv">searchBar</span><span class="p">:</span> <span class="kt">UISearchBar</span><span class="p">,</span> <span class="n">textDidChange</span> <span class="nv">searchText</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>searchBar</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the search bar that is being edited.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>searchText</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the current text in the search text field.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@iosOpenAPIDemo@objc(cs)SearchCommunitiesViewController(im)searchBarSearchButtonClicked:"></a>
+                    <a name="//apple_ref/swift/Method/searchBarSearchButtonClicked(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@iosOpenAPIDemo@objc(cs)SearchCommunitiesViewController(im)searchBarSearchButtonClicked:">searchBarSearchButtonClicked(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>keyboard gets disappeared when search button is clicked on search bar</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">searchBarSearchButtonClicked</span><span class="p">(</span><span class="n">_</span> <span class="nv">searchBar</span><span class="p">:</span> <span class="kt">UISearchBar</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>searchBar</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the search bar that is being edited.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>Copyright to SencaGlobal</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

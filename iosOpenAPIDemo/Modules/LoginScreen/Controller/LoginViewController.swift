@@ -10,17 +10,25 @@ import OpenAPI
 import CoreLocation
 import SVProgressHUD
 
+/// this class is responsible for user registration
 class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
     
-    // MARK: IBoutlet for signup button.
+    // MARK: IBOutlet variables
+    
+    /// signUpButton: a button to sign-up user
     @IBOutlet var signUpButton: UIButton!
     
     // MARK: View life cycle methods
+    
+    ///called whenever view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    // MARK: IBAction to perform when sign-in button is tapped
+    // MARK: IBAction method
+    
+    /// if authorization is successfull enters into Dash Board screen else shows an alert
+    /// - Parameter sender:  tells who caused the action on button
     @IBAction func LoginWithDetails(_ sender: Any) {
         SVProgressHUD.show()
         OpenAPI.authorization() { error, status in
@@ -38,7 +46,10 @@ class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
     }
     
+    //MARK: Static methods 
+    
     /// display an alert with a particular message
+    /// - Parameter message: a string value which will be displayed on the screen as an alert message
     func showAlertWithMessage(_ message: String) {
         /// create the alert
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)

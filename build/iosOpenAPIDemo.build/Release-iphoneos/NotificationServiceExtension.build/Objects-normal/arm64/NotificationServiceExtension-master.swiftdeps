@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "3dde7a40878cfb66c00372d25891b26e858a7e668b601b2b767fb1df71a4bcaf"
+build_start_time: [1677482831, 576438903]
+build_end_time: [1677482831, 630013942]
+inputs:
+  "/Users/likhithanarayana/Desktop/openapi-ios/NotificationServiceExtension/NotificationService.swift": !dirty [1677481852, 43869495]
