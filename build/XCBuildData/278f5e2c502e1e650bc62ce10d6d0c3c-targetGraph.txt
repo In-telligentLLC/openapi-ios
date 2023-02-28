@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+NotificationServiceExtension in iosOpenAPIDemo, no dependencies
+iosOpenAPIDemo in iosOpenAPIDemo, depends on:
+NotificationServiceExtension in iosOpenAPIDemo (explicit)

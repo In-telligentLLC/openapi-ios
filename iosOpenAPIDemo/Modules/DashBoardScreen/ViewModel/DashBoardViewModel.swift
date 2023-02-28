@@ -46,7 +46,7 @@ class DashBoardViewModel : NSObject {
     /// fetches all subscribed communities
     override init() {
         super.init()
-        self.subscribedCommunities = OpenAPI.getCommunities()
+        self.subscribedCommunities = INCommunityManager.shared.getCommunities()
     }
     
     // MARK: Static methods
